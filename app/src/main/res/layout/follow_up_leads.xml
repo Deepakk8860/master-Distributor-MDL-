@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.home.HomeModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nested"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F4F0F0"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Header -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sp"
+                        android:background="@color/white"
+                        android:elevation="@dimen/_3sp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Follow Ups"
+                            android:textColor="#000000"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Spacing -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_6sp"
+                        android:paddingHorizontal="@dimen/_6sp"
+                        android:background="#FFFFFF"
+                        >
+
+                        <RelativeLayout
+                            android:id="@+id/relOverDue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="@dimen/_10sp"
+                            android:paddingVertical="@dimen/_12sp"
+                            android:orientation="horizontal"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivCalError"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/iv_cal_error"/>
+
+                            <!-- Task Title -->
+                            <TextView
+                                android:id="@+id/txtOverDue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="OVERDUE"
+                                android:layout_toEndOf="@+id/ivCalError"
+                                android:textColor="@color/red"
+                                android:textStyle="bold"
+                                android:paddingStart="@dimen/_10sp"
+                                android:textSize="12sp" />
+
+
+                            <TextView
+                                android:id="@+id/txtOverDueCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/red"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="@dimen/_6sp"
+                                android:layout_toStartOf="@+id/ivArrowRightDue"
+                                android:paddingStart="@dimen/_10sp"
+                                android:textSize="15sp" />
+
+                            <!-- Arrow -->
+                            <ImageView
+                                android:id="@+id/ivArrowRightDue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Navigate to task details"
+                                app:tint="#C8C5C5"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/baseline_keyboard_arrow_right_24" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="@dimen/_3sp"
+                            android:background="#F0EBEB"/>
+
+
+                        <RelativeLayout
+                            android:id="@+id/relUpcoming"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="@dimen/_10sp"
+                            android:paddingVertical="@dimen/_12sp"
+                            android:orientation="horizontal"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivCalUpcoming"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/iv_cal_upcoming"/>
+
+                            <!-- Task Title -->
+                            <TextView
+                                android:id="@+id/txtUpcoming"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="UPCOMING"
+                                android:gravity="center"
+                                android:layout_toEndOf="@+id/ivCalUpcoming"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:paddingStart="@dimen/_10sp"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txtUpcomingDueCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="@dimen/_6sp"
+                                android:layout_toStartOf="@+id/ivArrowRightComing"
+                                android:paddingStart="@dimen/_10sp"
+                                android:textSize="15sp" />
+
+                            <!-- Arrow -->
+                            <ImageView
+                                android:id="@+id/ivArrowRightComing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Navigate to task details"
+                                app:tint="#C8C5C5"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/baseline_keyboard_arrow_right_24" />
+
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="@dimen/_3sp"
+                            android:background="#F0EBEB"/>
+
+                        <RelativeLayout
+                            android:id="@+id/relSomeDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="@dimen/_10sp"
+                            android:paddingVertical="@dimen/_12sp"
+                            android:orientation="horizontal"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivCalSomeday"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/iv_cal_someday"/>
+
+                            <!-- Task Title -->
+                            <TextView
+                                android:id="@+id/txtSomeday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="SOMEDAY"
+                                android:gravity="center"
+                                android:layout_toEndOf="@+id/ivCalSomeday"
+                                android:textColor="#6B8375"
+                                android:textStyle="bold"
+                                android:paddingStart="@dimen/_10sp"
+                                android:textSize="12sp" />
+
+
+                            <TextView
+                                android:id="@+id/txtSomedayCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:layout_centerVertical="true"
+                                android:textColor="#6B8375"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="@dimen/_6sp"
+                                android:layout_toStartOf="@+id/ivArrowRightSomeday"
+                                android:paddingStart="@dimen/_10sp"
+                                android:textSize="15sp" />
+
+                            <!-- Arrow -->
+                            <ImageView
+                                android:id="@+id/ivArrowRightSomeday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Navigate to task details"
+                                app:tint="#C8C5C5"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/baseline_keyboard_arrow_right_24" />
+
+                        </RelativeLayout>
+
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <!-- Spacing -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_6sp"
+                        android:paddingHorizontal="@dimen/_6sp"
+                        android:background="#FFFFFF"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="@dimen/_10sp"
+                            android:paddingVertical="@dimen/_12sp"
+                            android:orientation="horizontal"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivCalStar"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                app:tint="#01579B"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/iv_cal_someday"/>
+
+                            <!-- Task Title -->
+                            <TextView
+                                android:id="@+id/txtToday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="TODAY"
+                                android:gravity="center"
+                                android:layout_toEndOf="@+id/ivCalStar"
+                                android:textColor="#01579B"
+                                android:textStyle="bold"
+                                android:paddingHorizontal="@dimen/_10sp"
+                                android:textSize="12sp" />
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="@dimen/_3sp"
+                            android:background="#F0EBEB"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recFollowUpLeads"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:adapter="@{model.followLeadAdapter}"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:scrollbars="vertical"
+                            android:layout_marginBottom="@dimen/_15sp"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constToolbar"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:listitem="@layout/manage_client_adapter" />
+
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </RelativeLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</layout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.OffersModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainLayout"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_220sp"
+            android:background="#132D5F" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sp"
+            android:paddingTop="@dimen/_15sp"
+            android:paddingEnd="@dimen/_10sp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sp"
+                android:fontFamily="@font/bold"
+                android:includeFontPadding="false"
+                android:text="Offers"
+                android:textColor="#FFFFFF"
+
+                android:textSize="@dimen/_16sp" />
+
+
+        </LinearLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_65sp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_55sp">
+
+
+                <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/image"
+                    android:layout_marginTop="@dimen/_minus35sp"
+                    app:backgroundColor="@color/white"
+                    app:radiusTopLeft="@dimen/_25sp"
+                    app:radiusTopRight="@dimen/_25sp">
+
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sp"
+                        android:layout_marginTop="@dimen/_60sp"
+                        android:layout_marginEnd="@dimen/_15sp" />
+
+
+                </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sp"
+                    android:layout_marginEnd="@dimen/_20sp"
+                    android:adjustViewBounds="true"
+
+                    android:src="@drawable/banner" />
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomlLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sp"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_line" />
+
+            <Button
+                android:id="@+id/applyNow"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sp"
+                android:background="#F86202"
+                android:elevation="@dimen/_5sp"
+                android:fontFamily="@font/bold"
+                android:text="Apply Now"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

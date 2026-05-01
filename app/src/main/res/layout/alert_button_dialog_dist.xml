@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_back"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/_20sp">
+
+
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sp"
+        android:layout_marginBottom="@dimen/_15sp"
+        android:fontFamily="@font/medium"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_5sp"
+        android:text="You have not purchased any plan yet, please complete this application."
+        android:textColor="#1D3667"
+
+        android:textSize="@dimen/_13sp" />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_15sp"
+        android:layout_marginBottom="@dimen/_5sp"
+        android:background="@drawable/custom_primary_button"
+        android:backgroundTint="#F86202"
+        android:fontFamily="@font/medium"
+        android:includeFontPadding="false"
+
+        android:paddingStart="@dimen/_30sp"
+        android:paddingEnd="@dimen/_30sp"
+        android:text="Close"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sp" />
+
+</LinearLayout>

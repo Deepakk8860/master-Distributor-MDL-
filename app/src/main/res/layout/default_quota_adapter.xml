@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+        android:id="@+id/clickLay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sp"
+        android:gravity="center"
+        app:strokeColor="#CCD2E3"
+        android:layout_marginStart="@dimen/_5sp"
+        android:layout_marginEnd="@dimen/_5sp"
+        app:strokeWidth="@dimen/_1sp"
+        app:radius="@dimen/_5sp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/quota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/normal"
+
+            android:text="15"
+            android:textColor="#CC1D3667"
+
+            android:textSize="@dimen/_13sp" />
+
+
+    </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+</layout>

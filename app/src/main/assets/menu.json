@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "Home",
+    "icon": "home"
+  },
+  {
+    "id": "2",
+    "name": "Add",
+    "icon": "capture"
+  },
+  {
+    "id": "3",
+    "name": "Follows Ups",
+    "icon": "follows_ups"
+  },
+  {
+    "id": "4",
+    "name": "Leads",
+    "icon": "clients"
+  },
+  {
+    "id": "5",
+    "name": "Document",
+    "icon": "iv_document"
+  }
+
+]

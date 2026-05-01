@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.login.LoginModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient">
+
+        <LinearLayout
+            android:id="@+id/login_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <ImageView
+                android:layout_width="@dimen/_125sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_45sp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/big_logo"
+                 />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="74dp"
+                android:text="Welcome!"
+                android:textColor="#25233C"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Please sign in with your registered email address"
+                android:textColor="#25233C"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@android:color/white"
+                android:hint="email@example.com"
+                android:inputType="textEmailAddress"
+                android:padding="12dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sp"
+                android:background="#F86202"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/medium"
+                android:text="SIGN IN"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sp"
+                android:text="OR"
+                android:textColor="@color/black" />
+
+
+            <RelativeLayout
+                android:id="@+id/relGoogleLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_52sp"
+                android:layout_marginHorizontal="@dimen/_44sp"
+                android:layout_marginTop="@dimen/_20sp"
+                android:layout_marginBottom="@dimen/_20sp"
+                android:background="@drawable/background_google_login"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivGoogle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/google" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGoogleSignIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_14sp"
+                    android:layout_toEndOf="@+id/ivGoogle"
+                    android:fontFamily="@font/bold"
+                    android:text="Sign In with Google"
+                    android:textColor="@color/black" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            android:text="@string/need_help_chat_with_us"
+            android:textColor="#25233C" />
+
+        <TextView
+            android:id="@+id/chatSupport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@id/login_container"
+            android:text="Chat with us"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</layout>
+

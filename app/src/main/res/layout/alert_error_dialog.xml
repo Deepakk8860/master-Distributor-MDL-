@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_back"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="end"
+        android:background="@drawable/custom_trans_button"
+        android:src="@drawable/close" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/decline" />
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"
+        android:fontFamily="@font/medium"
+        android:gravity="center"
+        android:lineSpacingExtra="8dp"
+        android:padding="8dp"
+        android:text="You have not purchased any plan yet, please complete this application."
+        android:textColor="#25233C"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

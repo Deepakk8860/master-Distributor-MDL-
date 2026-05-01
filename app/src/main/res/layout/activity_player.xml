@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+
+        <androidx.media3.ui.PlayerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:auto_show="false"
+            app:buffered_color="@color/colorPrimary"
+            app:controller_layout_id="@layout/exoplayer_controller"
+            app:hide_on_touch="true"
+            app:resize_mode="fit"
+            app:show_buffering="always"
+            app:use_controller="true" />
+
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/playerViewLand"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:show_buffering="always"
+            app:use_controller="true" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerLay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sp"
+            android:background="#132D5F"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_25sp"
+                android:layout_height="@dimen/_16sp"
+                android:layout_marginStart="@dimen/_10sp"
+                android:src="@drawable/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_6sp"
+                android:fontFamily="@font/bold"
+                android:maxLines="2"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/clickLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingTop="@dimen/_18sp"
+            android:paddingEnd="@dimen/_13sp"
+            android:paddingBottom="@dimen/_20sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:fontFamily="@font/bold"
+                    android:includeFontPadding="false"
+
+                    android:lineSpacingExtra="@dimen/_3sp"
+                    android:paddingEnd="@dimen/_5sp"
+                    android:text="Graphics Design Package"
+                    android:textColor="#1D3667"
+
+                    android:textSize="@dimen/_12sp" />
+
+                <ImageView
+                    android:id="@+id/indicator"
+                    android:layout_width="@dimen/_15sp"
+                    android:layout_height="@dimen/_15sp"
+                    android:layout_marginStart="@dimen/_5sp"
+                    android:rotation="180"
+                    android:src="@drawable/service_down" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sp"
+                android:layout_marginTop="@dimen/_15sp"
+                android:background="#1A1D3667" />
+
+            <LinearLayout
+                android:id="@+id/headerLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:paddingStart="@dimen/_15sp"
+                android:paddingTop="@dimen/_15sp"
+                android:paddingEnd="@dimen/_15sp"
+                android:paddingBottom="@dimen/_5sp">
+
+                <TextView
+                    android:id="@+id/txtServices"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/normal"
+                    android:includeFontPadding="false"
+                    android:text="Services"
+                    android:textColor="#66132D5F"
+                    android:textSize="@dimen/_10sp" />
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:fontFamily="@font/normal"
+                    android:textAlignment="center"
+                    android:includeFontPadding="false"
+                    android:text="Price\n₹"
+                    android:textColor="#66132D5F"
+                    android:textSize="@dimen/_10sp" />
+
+                <TextView
+                    android:id="@+id/txtCost"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/normal"
+                    android:textAlignment="center"
+                    android:includeFontPadding="false"
+                    android:text="Your\nCommission\n₹"
+                    android:textColor="#66132D5F"
+                    android:textSize="@dimen/_10sp" />
+
+
+
+                <TextView
+                    android:id="@+id/distCommission"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/normal"
+                    android:includeFontPadding="false"
+                    android:text="Distributor\nCommission\n₹"
+                    android:textColor="#66132D5F"
+                    android:textSize="@dimen/_10sp" />
+
+                <TextView
+                    android:id="@+id/txtCommission"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/normal"
+                    android:includeFontPadding="false"
+                    android:text="Retailer\nCommission\n₹"
+                    android:textColor="#66132D5F"
+                    android:textSize="@dimen/_10sp" />
+
+                <ImageView
+                    android:id="@+id/ivRupee"
+                    android:layout_width="@dimen/_12sp"
+                    android:layout_height="@dimen/_12sp"
+                    android:layout_marginStart="@dimen/_2sp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_1sp"
+                    android:src="@drawable/inr2" />
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/_10sp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/service_item_adapter" />
+
+        </LinearLayout>
+        <View android:background="#F0EEEF"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sp"/>
+    </LinearLayout>
+
+</layout>

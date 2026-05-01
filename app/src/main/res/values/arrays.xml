@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="time_periods">
+        <item>Past 7 days</item>
+        <item>Past 24 hours</item>
+    </string-array>
+</resources>

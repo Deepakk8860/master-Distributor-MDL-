@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/alert_back"
+        android:orientation="vertical"
+        android:padding="@dimen/_20sp"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:gravity="start|center"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:paddingEnd="@dimen/_15sp"
+                android:text="Unblock Your Account"
+                android:textColor="#1D3667"
+                android:textSize="@dimen/_14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/close"
+                android:layout_width="@dimen/_25sp"
+                android:layout_height="@dimen/_25sp"
+                android:layout_gravity="end"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/close" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gstInputLay"
+                style="@style/OutlinedBoxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/branchId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:fontFamily="@font/normal"
+                    android:hint="Branch ID"
+                    android:importantForAutofill="no"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="15"
+                    android:paddingStart="@dimen/_15sp"
+                    android:paddingEnd="@dimen/_15sp"
+                    android:singleLine="true"
+                    android:textColor="#1D3667"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameInputLay"
+                style="@style/OutlinedBoxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:fontFamily="@font/normal"
+                    android:hint="@string/name"
+                    android:importantForAutofill="no"
+                    android:inputType="textCapWords"
+                    android:paddingStart="@dimen/_15sp"
+                    android:paddingEnd="@dimen/_15sp"
+                    android:singleLine="true"
+                    android:textColor="#1D3667"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mobileInputLay"
+                style="@style/OutlinedBoxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:fontFamily="@font/normal"
+                    android:hint="Mobile Number"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingStart="@dimen/_15sp"
+                    android:paddingEnd="@dimen/_15sp"
+                    android:singleLine="true"
+                    android:textColor="#1D3667"
+                    android:textCursorDrawable="@drawable/color_cursor"
+
+                    android:textSize="@dimen/_12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shopInputLay"
+                style="@style/OutlinedBoxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:fontFamily="@font/normal"
+                    android:hint="Email"
+                    android:importantForAutofill="no"
+                    android:inputType="textCapWords"
+                    android:paddingStart="@dimen/_15sp"
+                    android:paddingEnd="@dimen/_15sp"
+                    android:singleLine="true"
+                    android:textColor="#1D3667"
+                    android:textCursorDrawable="@drawable/color_cursor"
+
+                    android:textSize="@dimen/_12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </FrameLayout>
+
+
+        <Button
+            android:id="@+id/submit"
+            style="@style/button"
+            android:layout_marginBottom="@dimen/_10sp"
+            android:text="Submit" />
+    </LinearLayout>
+</layout>

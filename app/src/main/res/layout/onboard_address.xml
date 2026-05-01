@@ -1,0 +1,398 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.onboarding.OnboardModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Home Address"
+                    android:textColor="#661D3667"
+
+                    android:textSize="@dimen/_14sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/homeAddLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etHomeAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+                        android:hint="Home Address*"
+                        android:inputType="textCapWords"
+
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/homePinLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etHomePin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+
+                        android:hint="Pin Code*"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/homeStateLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etHomeState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Select State*"
+                            android:inputType="textCapWords"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sp"
+                        android:layout_height="@dimen/_22sp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/_15sp"
+                        android:layout_marginEnd="@dimen/_10sp"
+                        android:src="@drawable/stage_down" />
+
+                </FrameLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/homeCityLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etHomeCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+                        android:hint="City*"
+                        android:inputType="textCapWords"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+                        android:textColor="#1D3667"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/bold"
+
+                        android:includeFontPadding="false"
+                        android:text="Business Address"
+                        android:textColor="#661D3667"
+                        android:textSize="@dimen/_14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/sameBusiClick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/sameBusiCheck"
+                            android:layout_width="@dimen/_17sp"
+                            android:layout_height="@dimen/_17sp"
+                            android:src="@drawable/un_checked_add" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sp"
+
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:text="Same as Home Address"
+                            android:textColor="#1D3667"
+                            android:textSize="@dimen/_11sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/busiLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/busiAddLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sp">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBusiAdd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="Business Address*"
+                            android:inputType="textCapWords"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#152B57"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/busiPincodeLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBusiPincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="Business Pin Code*"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#152B57"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/busiStateLay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etBusiState"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:fontFamily="@font/normal"
+                                android:hint="Select State*"
+                                android:inputType="textCapWords"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#1D3667"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_27sp"
+                            android:layout_height="@dimen/_22sp"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/_15sp"
+                            android:layout_marginEnd="@dimen/_10sp"
+                            android:src="@drawable/stage_down" />
+
+                    </FrameLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/busiCityLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBusiCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="City*"
+                            android:inputType="textCapWords"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Select License Dispatch Address*"
+                    android:textColor="#1D3667"
+                    android:textSize="@dimen/_14sp"
+
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:id="@+id/addressRG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_minus5sp"
+                    android:layout_marginTop="@dimen/_7sp"
+                    android:layout_marginBottom="@dimen/_17sp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/homeRB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#F86202"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+                        android:minWidth="@dimen/_100sp"
+                        android:text="Home"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_13sp" />
+
+                    <RadioButton
+                        android:id="@+id/businessRB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#1D3667"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+                        android:minWidth="@dimen/_100sp"
+                        android:text="Business"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_13sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout   android:id="@+id/bottomLay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sp">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#25233C"
+                android:fontFamily="@font/bold"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F86202"
+                android:fontFamily="@font/bold"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

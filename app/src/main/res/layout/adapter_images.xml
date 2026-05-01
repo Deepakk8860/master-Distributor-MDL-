@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="@dimen/_120sp"
+        android:layout_height="@dimen/_200sp"
+        android:layout_marginStart="@dimen/_20sp"
+        android:layout_marginTop="@dimen/_8sp"
+        android:layout_marginEnd="@dimen/_20sp"
+        android:layout_marginBottom="@dimen/_16sp"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_25sp"
+        app:cardElevation="0sp"
+        app:strokeColor="#4D1D3667"
+        app:strokeWidth="@dimen/_1sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llBanner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sp">
+
+                <!-- Circular ImageView with Stroke -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/circularImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+
+            <!-- Title TextView -->
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#132D5F"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_6sp"
+                android:paddingVertical="@dimen/_6sp"
+                android:text="Earning Report"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

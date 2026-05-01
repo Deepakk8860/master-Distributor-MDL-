@@ -1,0 +1,32 @@
+package com.android.masterdistributormdl.model.profile
+
+data class Data(
+    val aadhaar_detail: AadhaarDetail,
+    val alt_email: String,
+    val alt_mobile: String,
+    val branch_id: String,
+    val company: String,
+    val create_dt: String,
+    val dob: String,
+    val email: String,
+    val fullname: String,
+    val gender: String,
+    val gstin: String,
+    val home_address: String,
+    val home_city: String,
+    val home_pincode: String,
+    val home_state: String,
+    val id: String,
+    val kyc_status: KycStatus,
+    val mobile: String,
+    val ofc_address: String,
+    val ofc_city: String,
+    val ofc_pincode: String,
+    val ofc_state: String,
+    val pan: String,
+    val pancardimage: String,
+    val profilephoto: String,
+    val sameaddress: Boolean,
+    val usertype: String,
+    val whatsapp: String
+)

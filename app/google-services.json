@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "22811752942",
+    "project_id": "gsk-master-franchise",
+    "storage_bucket": "gsk-master-franchise.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22811752942:android:46679ad66490e48f7e36ff",
+        "android_client_info": {
+          "package_name": "com.android.masterdistributormdl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22811752942-98d9as7v3jf6vl5ld7hj1auornjm778u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.masterdistributormdl",
+            "certificate_hash": "50325ab6a05d07a01c78514e6f21af1a883fe78a"
+          }
+        },
+        {
+          "client_id": "22811752942-emphrovkhk0kar1eictamda2venrlhbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnQFVVqbRv48ribI-vjNobcZltTQrY0JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22811752942-emphrovkhk0kar1eictamda2venrlhbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22811752942:android:bd84d01e10d0a7e37e36ff",
+        "android_client_info": {
+          "package_name": "com.gsk.gskMasterFranchise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22811752942-emphrovkhk0kar1eictamda2venrlhbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnQFVVqbRv48ribI-vjNobcZltTQrY0JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22811752942-emphrovkhk0kar1eictamda2venrlhbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22811752942:android:bbbe14adb3a12f7e7e36ff",
+        "android_client_info": {
+          "package_name": "com.gsk.mf01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22811752942-d7hl13qp6ulr2db5fdbjlcvehj4ao5a8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gsk.mf01",
+            "certificate_hash": "50325ab6a05d07a01c78514e6f21af1a883fe78a"
+          }
+        },
+        {
+          "client_id": "22811752942-emphrovkhk0kar1eictamda2venrlhbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnQFVVqbRv48ribI-vjNobcZltTQrY0JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22811752942-emphrovkhk0kar1eictamda2venrlhbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

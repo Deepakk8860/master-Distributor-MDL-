@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.ShopModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/headerLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center|start"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_25sp"
+            android:paddingBottom="@dimen/_15sp">
+
+            <ImageView
+                android:id="@+id/menu"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:layout_marginStart="@dimen/_15sp"
+                android:src="@drawable/menu" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sp"
+                android:layout_marginStart="@dimen/_10sp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/white_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:paddingEnd="@dimen/_10sp">
+
+                <ImageView
+                    android:id="@+id/support"
+                    android:layout_width="@dimen/_35sp"
+                    android:layout_height="@dimen/_35sp"
+                    android:layout_marginStart="@dimen/_5sp"
+                    android:padding="@dimen/_7sp"
+                    android:src="@drawable/headphones" />
+
+                <ImageView
+                    android:id="@+id/notification"
+                    android:layout_width="@dimen/_35sp"
+                    android:layout_height="@dimen/_35sp"
+                    android:padding="@dimen/_7sp"
+                    android:src="@drawable/bell_light" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/headerLay"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#132D5F"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_55sp">
+
+                    <LinearLayout
+                        android:id="@+id/registeredQuotaLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sp"
+                        android:layout_marginBottom="@dimen/_10sp"
+                        android:gravity="center|start"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:paddingStart="@dimen/_20sp"
+                        android:paddingEnd="@dimen/_20sp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bold"
+                            android:includeFontPadding="false"
+                            android:text="Registered Retailer : "
+                            android:textColor="#FFFFFF"
+
+                            android:textSize="@dimen/_15sp" />
+
+                        <TextView
+                            android:id="@+id/regShop2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_1sp"
+                            android:layout_marginEnd="@dimen/_15sp"
+                            android:fontFamily="@font/black"
+                            android:includeFontPadding="false"
+                            android:text="0"
+                            android:textColor="#F4A11E"
+                            android:textSize="@dimen/_16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/quotaInfoLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sp"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/_20sp"
+                        android:paddingEnd="@dimen/_20sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:includeFontPadding="false"
+                            android:text="Available Retailer Quota"
+                            android:textColor="#FFFFFF"
+                            android:visibility="gone"
+                            android:textSize="@dimen/_15sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sp"
+                            android:layout_marginTop="@dimen/_14sp"
+                            android:layout_marginBottom="@dimen/_15sp"
+                            android:visibility="gone"
+                            android:background="#4DCCD2E3" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:includeFontPadding="false"
+                                    android:text="Available Retailer"
+                                    android:textColor="#E6FFFFFF"
+
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/availShop"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sp"
+                                    android:fontFamily="@font/black"
+                                    android:includeFontPadding="false"
+
+                                    android:text="0"
+                                    android:textColor="#2BC354"
+
+                                    android:textSize="@dimen/_18sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="@dimen/_1sp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/_5sp"
+
+                                android:layout_marginBottom="@dimen/_5sp"
+                                android:background="#4DCCD2E3" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:includeFontPadding="false"
+                                    android:text="Registered Retailer"
+                                    android:textColor="#E6FFFFFF"
+
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/regShop"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sp"
+                                    android:fontFamily="@font/black"
+                                    android:includeFontPadding="false"
+
+                                    android:text="0"
+                                    android:textColor="#F4A11E"
+
+                                    android:textSize="@dimen/_18sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_minus35sp"
+                    android:background="@drawable/main_"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:layout_marginTop="@dimen/_15sp"
+                        android:layout_marginEnd="@dimen/_5sp"
+                        android:layout_marginBottom="@dimen/_10sp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bold"
+                            android:includeFontPadding="false"
+                            android:text="Retailer"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_16sp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/payNow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                            app:cardBackgroundColor="#F6F6F6"
+                            app:cardCornerRadius="@dimen/_30sp"
+                            app:cardElevation="@dimen/_3sp"
+                            android:visibility="gone"
+                            app:strokeColor="#661D3667"
+                            app:strokeWidth="@dimen/_1sp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/medium"
+                                android:includeFontPadding="false"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingTop="@dimen/_10sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:paddingBottom="@dimen/_10sp"
+                                android:text="Buy Retailer Quota"
+                                android:textColor="#F26522"
+                                android:textSize="@dimen/_11sp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/shopDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        app:cardElevation="@dimen/_3sp"
+                        app:strokeColor="#1D3667"
+                        app:strokeWidth="@dimen/_1sp">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/shop_2" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_17sp"
+                            android:paddingEnd="@dimen/_10sp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="@dimen/_33sp"
+                                android:layout_height="@dimen/_33sp"
+                                android:background="@drawable/orange_rect"
+                                android:src="@drawable/shop_details"
+                                app:contentPadding="@dimen/_5sp"
+                                app:shapeAppearance="@style/CornerSize25Percent" />
+
+                            <TextView
+                                android:layout_width="0sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/medium"
+                                android:includeFontPadding="false"
+                                android:paddingStart="@dimen/_14sp"
+                                android:text="Retailers List"
+                                android:textColor="#132D5F"
+                                android:textSize="@dimen/_14sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sp"
+                                android:layout_height="@dimen/_15sp"
+
+                                android:src="@drawable/next_shop" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/addShop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        app:cardElevation="@dimen/_3sp"
+                        app:strokeColor="#1D3667"
+                        app:strokeWidth="@dimen/_1sp">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/shop_2" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_17sp"
+                            android:paddingEnd="@dimen/_10sp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="@dimen/_33sp"
+                                android:layout_height="@dimen/_33sp"
+                                android:background="@drawable/orange_rect"
+                                android:src="@drawable/add_shop"
+                                app:contentPadding="@dimen/_5sp"
+                                app:shapeAppearance="@style/CornerSize25Percent" />
+
+                            <TextView
+                                android:layout_width="0sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/medium"
+                                android:includeFontPadding="false"
+
+                                android:paddingStart="@dimen/_14sp"
+                                android:text="Add New Retailer"
+                                android:textColor="#132D5F"
+
+                                android:textSize="@dimen/_14sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sp"
+                                android:layout_height="@dimen/_15sp"
+
+                                android:src="@drawable/next_shop" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/deleteShop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        app:cardElevation="@dimen/_3sp"
+                        android:visibility="gone"
+                        app:strokeColor="#1D3667"
+                        app:strokeWidth="@dimen/_1sp">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/shop_2" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_17sp"
+                            android:paddingEnd="@dimen/_10sp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="@dimen/_33sp"
+                                android:layout_height="@dimen/_33sp"
+                                android:background="@drawable/orange_rect"
+                                android:src="@drawable/shop_icon"
+                                app:contentPadding="@dimen/_5sp"
+                                app:shapeAppearance="@style/CornerSize25Percent" />
+
+                            <TextView
+                                android:layout_width="0sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/medium"
+                                android:includeFontPadding="false"
+
+                                android:paddingStart="@dimen/_14sp"
+                                android:text="Deactivate Retailer"
+                                android:textColor="#132D5F"
+
+                                android:textSize="@dimen/_14sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sp"
+                                android:layout_height="@dimen/_15sp"
+
+                                android:src="@drawable/next_shop" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/pendingShop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        app:cardElevation="@dimen/_3sp"
+                        android:visibility="gone"
+                        app:strokeColor="#1D3667"
+                        app:strokeWidth="@dimen/_1sp">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/shop_2" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_17sp"
+                            android:paddingEnd="@dimen/_10sp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="@dimen/_33sp"
+                                android:layout_height="@dimen/_33sp"
+                                android:background="@drawable/orange_rect"
+                                android:src="@drawable/shop_pending"
+                                app:contentPadding="@dimen/_5sp"
+                                app:shapeAppearance="@style/CornerSize25Percent" />
+
+                            <TextView
+                                android:layout_width="0sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/medium"
+                                android:includeFontPadding="false"
+
+                                android:paddingStart="@dimen/_14sp"
+                                android:text="Deactivation Pending"
+                                android:textColor="#132D5F"
+
+                                android:textSize="@dimen/_14sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sp"
+                                android:layout_height="@dimen/_15sp"
+
+                                android:src="@drawable/next_shop" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/pendingAgreement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        app:cardElevation="@dimen/_3sp"
+                        app:strokeColor="#1D3667"
+                        app:strokeWidth="@dimen/_1sp">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/shop_2" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_17sp"
+                            android:paddingEnd="@dimen/_10sp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="@dimen/_33sp"
+                                android:layout_height="@dimen/_33sp"
+                                android:background="@drawable/orange_rect"
+                                android:src="@drawable/shop_agreement"
+                                app:contentPadding="@dimen/_5sp"
+                                app:shapeAppearance="@style/CornerSize25Percent" />
+
+                            <TextView
+                                android:layout_width="0sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/medium"
+                                android:includeFontPadding="false"
+
+                                android:paddingStart="@dimen/_14sp"
+                                android:text="Agreements Pending"
+                                android:textColor="#132D5F"
+
+                                android:textSize="@dimen/_14sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sp"
+                                android:layout_height="@dimen/_15sp"
+
+                                android:src="@drawable/next_shop" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+
+</layout>

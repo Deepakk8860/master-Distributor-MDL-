@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+
+    <com.gsk.distributor.utils.ZoomImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back" android:layout_margin="@dimen/_7sp"
+        android:layout_width="@dimen/_35sp"
+        android:layout_height="@dimen/_35sp"
+        android:background="@drawable/custom_trans_button"
+
+        android:src="@drawable/arrow_left_white" />
+
+</FrameLayout>

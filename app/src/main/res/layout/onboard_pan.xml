@@ -1,0 +1,189 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.onboarding.OnboardModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sp">
+
+                <LinearLayout
+                    android:id="@+id/pickPanImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dash_line2"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="@dimen/_20sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_20sp"
+                        android:layout_height="@dimen/_20sp"
+                        android:src="@drawable/upload_attechment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sp"
+
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="PAN Card Front Side"
+                        android:textColor="#1D3667"
+
+                        android:textSize="@dimen/_14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sp"
+
+                        android:fontFamily="@font/normal"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Upload Front Side of your PAN Card."
+                        android:textColor="#801D3667"
+
+                        android:textSize="@dimen/_11sp" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/panImageLay"
+                    android:layout_width="@dimen/_170sp"
+                    android:layout_height="@dimen/_100sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_7sp"
+                    app:cardElevation="0sp">
+
+                    <ImageView
+                        android:id="@+id/panImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/banner" />
+
+                    <ImageView
+                        android:id="@+id/panClose"
+                        android:layout_width="@dimen/_15sp"
+                        android:layout_height="@dimen/_15sp"
+                        android:layout_gravity="end"
+                        android:layout_margin="@dimen/_5sp"
+                        android:src="@drawable/close" />
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/panNoLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPanNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+                        android:hint="PAN Card Number*"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="10"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/panDobLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPanDob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:fontFamily="@font/normal"
+                        android:hint="Date of Birth*"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="60"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomLay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sp">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#25233C"
+                android:fontFamily="@font/bold"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F86202"
+                android:fontFamily="@font/bold"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

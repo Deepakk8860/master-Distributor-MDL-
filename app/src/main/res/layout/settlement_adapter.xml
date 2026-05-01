@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sp"
+        android:layout_marginTop="@dimen/_8sp"
+        android:layout_marginEnd="@dimen/_20sp"
+        android:layout_marginBottom="@dimen/_8sp"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_25sp"
+        app:cardElevation="0sp"
+        app:strokeColor="#CFCFCF"
+        app:strokeWidth="@dimen/_1sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_20sp"
+                android:paddingTop="@dimen/_17sp"
+                android:paddingEnd="@dimen/_18sp"
+                android:paddingBottom="@dimen/_17sp">
+
+                <TextView
+                    android:id="@+id/tnxid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/medium"
+                    android:includeFontPadding="false"
+
+
+                    android:text="TNX ID:  2134118"
+                    android:textColor="#1D3667"
+
+                    android:textSize="@dimen/_14sp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sp"
+                android:background="#CFCFCF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_20sp"
+                android:paddingTop="@dimen/_15sp"
+                android:paddingEnd="@dimen/_20sp"
+                android:paddingBottom="@dimen/_15sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+
+                        android:text="Date"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+
+
+                        android:text="20 Nov 2022"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+
+                        android:text="Requested Amount"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/requestAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+
+
+                        android:text="100"
+                        android:textColor="#F86202"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+
+                        android:text="Transferred Amount"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/transferAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+
+
+                        android:text="100"
+                        android:textColor="#F86202"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+
+                        android:text="Service Charge"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/serviceCharge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+
+
+                        android:text="100"
+                        android:textColor="#F86202"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:layout_marginBottom="@dimen/_5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+
+                        android:text="Settled In"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/settledIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+
+
+                        android:text="AEPS"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:layout_marginBottom="@dimen/_5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+
+                        android:text="Status"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+
+
+                        android:text="Pending"
+                        android:textColor="#F4A11E"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:layout_marginBottom="@dimen/_5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+                        android:text="UTR Number"
+                        android:textColor="#E61D3667"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/rrn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+
+
+                        android:text="66776"
+                        android:textColor="#E61D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,264 @@
+<com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_25sp"
+    android:paddingTop="@dimen/_25sp"
+
+    android:paddingEnd="@dimen/_25sp"
+    android:paddingBottom="@dimen/_20sp"
+    android:theme="@style/MaterialTheme"
+    app:backgroundColor="@color/white"
+    app:radiusTopLeft="@dimen/_35sp"
+    app:radiusTopRight="@dimen/_35sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sp"
+            android:layout_weight="1"
+            android:fontFamily="@font/bold"
+            android:includeFontPadding="false"
+            android:text="Edit Price"
+            android:textColor="#132D5F"
+
+            android:textSize="@dimen/_16sp" />
+
+        <ImageView android:background="@drawable/custom_trans_button"
+            android:id="@+id/close"
+            android:layout_width="@dimen/_22sp"
+            android:layout_height="@dimen/_22sp"
+            android:src="@drawable/close" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sp"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLay1"
+                    style="@style/OutlinedBoxStyleEditPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPrice1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sp"
+                        android:fontFamily="@font/medium"
+                        android:hint="Customer Price"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_18sp"
+                    android:layout_height="@dimen/_18sp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginTop="@dimen/_2sp"
+                    android:layout_marginEnd="@dimen/_10sp"
+
+                    android:src="@drawable/inr" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/customerMin"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/normal"
+                    android:text="Min ₹200"
+                    android:textColor="#6625233C"
+
+                    android:textSize="@dimen/_10sp" />
+
+                <TextView
+                    android:id="@+id/customerMax"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/normal"
+                    android:gravity="end"
+                    android:text="Max ₹1500"
+                    android:textColor="#6625233C"
+                    android:textSize="@dimen/_10sp" />
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sp"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLay2"
+                    style="@style/OutlinedBoxStyleEditPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPrice2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sp"
+                        android:fontFamily="@font/medium"
+                        android:hint="Retailer Commission"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_18sp"
+                    android:layout_height="@dimen/_18sp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginTop="@dimen/_2sp"
+                    android:layout_marginEnd="@dimen/_10sp"
+
+                    android:src="@drawable/inr" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shopMin"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/normal"
+                    android:text="Min ₹200"
+                    android:textColor="#6625233C"
+
+                    android:textSize="@dimen/_10sp" />
+
+                <TextView
+                    android:id="@+id/shopMax"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/normal"
+                    android:gravity="end"
+                    android:text="Max ₹1500"
+                    android:textColor="#6625233C"
+                    android:textSize="@dimen/_10sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sp"
+                android:orientation="horizontal">
+
+                <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_45sp"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_100sp"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_12sp"
+                    android:paddingEnd="@dimen/_12sp"
+                    app:backgroundColor="#33CCD2E3"
+                    app:radius="@dimen/_5sp"
+                    app:strokeColor="#33CCD2E3"
+                    app:strokeWidth="@dimen/_1sp">
+
+                    <TextView
+                        android:id="@+id/comiPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+
+                        android:text="₹50"
+                        android:textColor="#132D5F"
+
+                        android:textSize="@dimen/_14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+                        android:text="Your Commission"
+                        android:textColor="#66132D5F"
+                        android:textSize="@dimen/_9sp" />
+
+                </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sp"
+                    android:layout_marginStart="@dimen/_15sp"
+                    android:background="@drawable/login_button"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>

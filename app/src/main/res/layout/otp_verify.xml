@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.login.LoginModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sp"
+            android:paddingTop="@dimen/_10sp"
+            android:paddingEnd="@dimen/_10sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/custom_trans_button"
+
+                android:src="@drawable/arrow_left2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_125sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:adjustViewBounds="true"
+                android:src="@drawable/big_logo" />
+
+
+        </FrameLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_50sp"
+                    android:fontFamily="@font/medium"
+                    android:text="Verify Email"
+                    android:textColor="#25233C"
+                    android:textSize="@dimen/_18sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/code_sent_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sp"
+                    android:layout_marginTop="@dimen/_25sp"
+                    android:layout_marginEnd="@dimen/_25sp"
+                    android:fontFamily="@font/normal"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/_5sp"
+                    android:text="@string/code_sent_to"
+                    android:textColor="#5E6B75"
+                    android:textSize="@dimen/_13sp" />
+
+                <LinearLayout
+                    android:id="@+id/edit_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sp"
+                    android:layout_marginTop="@dimen/_25sp"
+                    android:layout_marginEnd="@dimen/_25sp"
+                    android:gravity="center">
+
+                    <com.android.masterdistributormdl.utils.Pinview
+                        android:id="@+id/pinView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cursorVisible="false"
+                        app:forceKeyboard="false"
+                        app:inputType="number"
+                        app:pinBackground="@drawable/edt_bg_selector"
+                        app:pinHeight="@dimen/_42sp"
+                        app:pinLength="4"
+                        app:pinWidth="@dimen/_44sp"
+                        app:splitWidth="@dimen/_15sp"
+                        app:textSize="@dimen/_8sp" />                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/resend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_25sp"
+                    android:background="@drawable/custom_trans_button"
+                    android:fontFamily="@font/medium"
+                    android:padding="@dimen/_6sp"
+                    android:text="@string/resend_otp"
+                    android:textColor="#273B4A"
+                    android:textSize="@dimen/_13sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/loginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25sp"
+                    android:layout_marginHorizontal="@dimen/_30sp"
+                    android:background="#F86202"
+                    android:backgroundTint="@null"
+                    android:paddingVertical="@dimen/_16sp"
+                    android:fontFamily="@font/medium"
+                    android:text="SUBMIT"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+</layout>

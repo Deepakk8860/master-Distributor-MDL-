@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sp"
+        android:background="@drawable/background_preferred_msg_profin"
+        android:elevation="1dp"
+        android:layout_marginHorizontal="@dimen/_10sp"
+        android:paddingStart="@dimen/_8sp"
+        android:paddingTop="@dimen/_14sp"
+        android:paddingBottom="@dimen/_14sp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPdf"
+            android:layout_width="@dimen/_32sp"
+            android:layout_height="@dimen/_32sp"
+            android:src="@drawable/iv_pdf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/txtFileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sp"
+            android:fontFamily="@font/medium"
+            android:lineSpacingExtra="@dimen/_2sp"
+            android:text=""
+            android:singleLine="true"
+            android:textColor="@color/Black_333"
+            android:layout_marginEnd="@dimen/_6sp"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintStart_toEndOf="@+id/ivPdf"
+            app:layout_constraintEnd_toStartOf="@+id/ivShare"
+            app:layout_constraintTop_toTopOf="@+id/ivPdf" />
+
+        <TextView
+            android:id="@+id/txtFileNameType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:lineSpacingExtra="@dimen/_2sp"
+            android:text="PDF"
+            android:textColor="@color/Black_333"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtFileName"
+            app:layout_constraintEnd_toStartOf="@+id/ivShare"
+            app:layout_constraintTop_toBottomOf="@+id/txtFileName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivShare"
+            android:layout_width="@dimen/_19sp"
+            android:layout_height="@dimen/_19sp"
+            android:src="@drawable/iv_share_doc"
+            android:layout_marginEnd="@dimen/_14sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivPreview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="@dimen/_24sp"
+            android:layout_height="@dimen/_24sp"
+            android:src="@drawable/iv_preview"
+            android:layout_marginHorizontal="@dimen/_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

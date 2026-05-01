@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:paddingTop="16dp">
+
+    <!-- Close Icon -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/iv_close"
+        android:layout_gravity="start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="@android:color/white"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/bottomSheetContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notes"
+                android:background="#F8F4F4"
+                android:textColor="#666666"
+                android:paddingVertical="@dimen/_14sp"
+                android:textSize="15sp"
+                android:paddingStart="@dimen/_16sp"
+                android:fontFamily="@font/medium" />
+
+
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_160sp"
+                    android:textSize="14sp"
+                    android:background="@null"
+                    android:fontFamily="@font/normal"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:hint="@string/add_notes_about_your_client_here"
+                    android:gravity="top"
+                    android:paddingVertical="@dimen/_8sp"
+                    android:paddingHorizontal="@dimen/_12sp"
+                    android:inputType="text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sp"
+                android:layout_marginBottom="@dimen/_8sp"
+                android:background="@drawable/login_button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/medium"
+                android:text="@string/save"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

@@ -1,0 +1,134 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_droup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:padding="@dimen/_16sp"
+            android:text="Select"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/iv_close"
+            android:layout_gravity="start"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+
+
+        <View
+            android:id="@+id/viewline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sp"
+            android:background="@color/view_color"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingVertical="@dimen/_12sp">
+
+        <LinearLayout
+            android:id="@+id/checkboxContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAllLeads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All Leads"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="13sp"
+                android:layout_marginTop="@dimen/_8sp"
+                android:layout_marginStart="@dimen/_16sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="3dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_12sp"
+                android:background="#EDECEC"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtManualLeads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Manual Leads"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="13sp"
+                android:layout_marginTop="@dimen/_16sp"
+                android:layout_marginStart="@dimen/_16sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="3dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_12sp"
+                android:background="#EDECEC"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSystemLeads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="System Leads"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="13sp"
+                android:layout_marginBottom="@dimen/_6sp"
+                android:layout_marginTop="@dimen/_16sp"
+                android:layout_marginStart="@dimen/_16sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="3dp" />
+
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

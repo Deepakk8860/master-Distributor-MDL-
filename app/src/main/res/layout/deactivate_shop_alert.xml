@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_back"
+
+    android:orientation="vertical"
+    android:theme="@style/MaterialTheme">
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sp"
+        android:layout_marginBottom="@dimen/_10sp"
+        android:fontFamily="@font/medium"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_3sp"
+        android:padding="@dimen/_15sp"
+        android:text="Do you want to Deactivate\nthis Retailer?"
+        android:textColor="#002942"
+        android:textSize="@dimen/_14sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reasonInputLay"
+        style="@style/OutlinedBoxStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sp"
+        android:layout_marginEnd="@dimen/_20sp">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/normal"
+            android:gravity="start"
+            android:hint="Enter the reason"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxHeight="@dimen/_100sp"
+            android:maxLength="500"
+            android:minHeight="@dimen/_80sp"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingEnd="@dimen/_15sp"
+            android:singleLine="true"
+            android:textColor="#1D3667"
+            android:textCursorDrawable="@drawable/color_cursor"
+
+            android:textSize="@dimen/_13sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+
+        android:id="@+id/countMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/_minus7sp"
+        android:layout_marginEnd="@dimen/_20sp"
+        android:fontFamily="@font/medium"
+        android:gravity="center"
+
+        android:text="0/500"
+        android:textColor="#80002942"
+        android:textSize="@dimen/_11sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sp"
+        android:layout_marginTop="@dimen/_15sp"
+        android:background="#33577486" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sp"
+        android:layout_marginEnd="@dimen/_5sp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sp"
+            android:layout_marginStart="@dimen/_15sp"
+            android:layout_marginTop="@dimen/_5sp"
+            android:layout_marginEnd="@dimen/_15sp"
+            android:layout_marginBottom="@dimen/_7sp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_trans_button"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="No"
+            android:textColor="#99193649"
+            android:textSize="@dimen/_12sp" />
+
+        <View
+            android:layout_width="@dimen/_1sp"
+            android:layout_height="match_parent"
+            android:background="#33577486" />
+
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sp"
+            android:layout_marginStart="@dimen/_15sp"
+            android:layout_marginTop="@dimen/_5sp"
+            android:layout_marginEnd="@dimen/_15sp"
+            android:layout_marginBottom="@dimen/_7sp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_trans_button"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Yes"
+            android:textColor="#F86202"
+            android:textSize="@dimen/_12sp" />
+
+    </LinearLayout>
+</LinearLayout>

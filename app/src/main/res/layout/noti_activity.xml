@@ -1,0 +1,112 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F86202"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/topLay"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_50sp"
+                android:scaleType="fitXY"
+                android:src="@drawable/splash_v" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_190sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:adjustViewBounds="true"
+                android:src="@drawable/big_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_35sp"
+
+                android:fontFamily="@font/medium"
+
+
+                android:text=""
+                android:textColor="#FFFFFF"
+
+                android:textSize="@dimen/_14sp" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/powerLay"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight=".3"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_20sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/_40sp"
+                    android:layout_height="@dimen/_1sp"
+                    android:background="#B3DFDEDE" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sp"
+
+                    android:fontFamily="@font/normal"
+                    android:text="Powered By"
+                    android:textColor="#CCFFFFFF"
+
+                    android:textSize="@dimen/_13sp" />
+
+                <View
+                    android:layout_width="@dimen/_40sp"
+                    android:layout_height="@dimen/_1sp"
+                    android:layout_marginStart="@dimen/_5sp"
+                    android:background="#B3DFDEDE" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_160sp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_5sp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/white_prologic_logo" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/version_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom|center"
+            android:fontFamily="@font/normal"
+            android:gravity="center"
+            android:padding="@dimen/_5sp"
+            android:text="Version Name 1.0"
+            android:textColor="#56FFFFFF"
+            android:textSize="@dimen/_9sp" />
+
+
+    </LinearLayout>
+</layout>

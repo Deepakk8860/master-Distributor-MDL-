@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.AddShopModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF9F3"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sp"
+            android:paddingTop="@dimen/_15sp"
+
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:layout_marginStart="@dimen/_7sp"
+
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+
+                android:fontFamily="@font/medium"
+
+
+                android:text="Generate The Certificate"
+                android:textColor="#132D5F"
+
+                android:textSize="@dimen/_16sp" />
+
+        </LinearLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/login_"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sp">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nameInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Contact Person"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:text="Prakash Chandra"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/mobileInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Mobile No"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/shopInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/shop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Retailer Name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/gstInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/gst_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="GST No"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addressInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Address"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/landmarkInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/landmark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Landmark"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cityInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="City/Village"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/pincodeInputLay"
+                        style="@style/OutlinedBoxStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/pincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Pin Code"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+
+                            android:maxLength="6"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/OutlinedBoxStyle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/district"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:enabled="false"
+                                android:fontFamily="@font/normal"
+                                android:hint="District"
+                                android:importantForAutofill="no"
+                                android:inputType="textCapWords"
+
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#1D3667"
+                                android:textCursorDrawable="@drawable/color_cursor"
+
+                                android:textSize="@dimen/_14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/OutlinedBoxStyle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:fontFamily="@font/normal"
+                                android:hint="State"
+                                android:importantForAutofill="no"
+                                android:inputType="textCapWords"
+
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#1D3667"
+                                android:textCursorDrawable="@drawable/color_cursor"
+
+                                android:textSize="@dimen/_14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/save"
+                    style="@style/button"
+
+                    android:layout_marginTop="@dimen/_10sp"
+                    android:layout_marginBottom="@dimen/_5sp"
+
+                    android:text="Generate Certificate" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sp"
+        android:layout_marginTop="@dimen/_8sp"
+        android:layout_marginEnd="@dimen/_20sp"
+        android:layout_marginBottom="@dimen/_8sp"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_25sp"
+        app:cardElevation="0sp"
+        app:strokeColor="#4D1D3667"
+        app:strokeWidth="@dimen/_1sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4DFFF9F3"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_20sp"
+                android:visibility="gone"
+                android:paddingTop="@dimen/_17sp"
+                android:paddingEnd="@dimen/_18sp"
+                android:paddingBottom="@dimen/_17sp">
+
+                <TextView
+                    android:id="@+id/shopId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:includeFontPadding="false"
+                    android:text="Distributor ID:  2134118"
+                    android:textColor="#1D3667"
+
+                    android:textSize="@dimen/_15sp" />
+
+                <TextView
+                    android:id="@+id/shop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:fontFamily="@font/normal"
+                    android:includeFontPadding="false"
+                    android:text="Retailer Name : Prologic Web Solutions"
+                    android:textColor="#B31D3667"
+
+                    android:textSize="@dimen/_12sp" />
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:fontFamily="@font/normal"
+                    android:includeFontPadding="false"
+                    android:visibility="gone"
+                    android:text="Customer ID: 2117 | Nov 1, 2022"
+                    android:textColor="#B31D3667"
+                    android:textSize="@dimen/_12sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sp"
+                android:background="#4D1D3667" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_20sp"
+                android:paddingTop="@dimen/_15sp"
+                android:paddingEnd="@dimen/_20sp"
+                android:paddingBottom="@dimen/_15sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+
+                        android:text="Order ID :"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/orderId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+
+
+                        android:text="345346"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+                        android:text="Order Amount :"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/orderAmt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="Android App"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+                        android:text="Date :"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/orderDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="Android App"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+
+                        android:text="Order Amount without GST :"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/amtNoGst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+
+
+                        android:text="98767834556"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+                        android:text="Referral Name :"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/referralName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="1 Nov 2022"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+                        android:text="Referral Type :"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/referralType"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/medium"
+                        android:text="500"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+                        android:text="Referral Id :"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/referralId"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/medium"
+                        android:text="500"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/earnType"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+
+                        android:text="Your Earning :"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/earn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="100"
+                        android:textColor="#F86202"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

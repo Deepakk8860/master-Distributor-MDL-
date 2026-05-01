@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.onboarding.AgreementModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sp"
+            android:paddingTop="@dimen/_10sp"
+            android:paddingEnd="@dimen/_10sp"
+            android:paddingBottom="@dimen/_15sp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sp"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:includeFontPadding="false"
+                android:text="Agreement"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sp" />
+
+
+            <LinearLayout
+                android:id="@+id/downloadTopLay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/download1"
+                    android:layout_width="@dimen/_35sp"
+                    android:layout_height="@dimen/_35sp"
+                    android:src="@drawable/download_icon" />
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="@dimen/_35sp"
+                    android:layout_height="@dimen/_35sp"
+                    android:layout_marginStart="@dimen/_5sp"
+                    android:padding="@dimen/_8sp"
+                    android:src="@drawable/share"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1">
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/bottomLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/_20sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/signAlert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sp"
+                android:layout_marginTop="@dimen/_15sp"
+                android:layout_marginEnd="@dimen/_20sp"
+                android:layout_marginBottom="@dimen/_7sp"
+                android:fontFamily="@font/normal"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Please tap the button “Sign” to sign the Agreement."
+                android:textColor="#B3132D5F"
+                android:textSize="@dimen/_11sp" />
+
+            <Button
+                android:id="@+id/sign"
+                style="@style/button"
+                android:layout_marginStart="@dimen/_20sp"
+                android:layout_marginTop="@dimen/_7sp"
+                android:layout_marginEnd="@dimen/_20sp"
+                android:layout_marginBottom="@dimen/_15sp"
+                android:background="@drawable/gray_button"
+                android:text="Sign" />
+
+            <LinearLayout
+                android:id="@+id/downloadLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/download"
+                    style="@style/button"
+                    android:layout_marginStart="@dimen/_20sp"
+                    android:layout_marginTop="@dimen/_7sp"
+                    android:layout_marginEnd="@dimen/_7sp"
+                    android:layout_marginBottom="@dimen/_15sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F4A11E"
+                    android:text="Download" />
+
+                <Button
+                    android:id="@+id/next"
+                    style="@style/button"
+                    android:layout_marginStart="@dimen/_7sp"
+                    android:layout_marginTop="@dimen/_7sp"
+                    android:layout_marginEnd="@dimen/_20sp"
+                    android:layout_marginBottom="@dimen/_15sp"
+                    android:layout_weight="1"
+                    android:text="Next" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

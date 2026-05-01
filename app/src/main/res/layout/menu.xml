@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.MainModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#132D5F"
+        android:theme="@style/MaterialTheme">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/close"
+                android:layout_width="@dimen/_25sp"
+                android:layout_height="@dimen/_25sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_10sp"
+                android:layout_marginEnd="@dimen/_10sp"
+                android:background="@drawable/custom_trans_button"
+
+                android:src="@drawable/close_menu" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sp">
+
+                <FrameLayout
+                    android:id="@+id/imageEdit"
+                    android:layout_width="@dimen/_50sp"
+                    android:layout_height="@dimen/_50sp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/userImage"
+                        android:layout_width="@dimen/_45sp"
+                        android:layout_height="@dimen/_45sp"
+                        android:src="@drawable/logo_app"
+                        app:shapeAppearance="@style/CornerSize10Percent" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sp"
+                        android:layout_height="@dimen/_15sp"
+                        android:layout_gravity="bottom|end"
+                        android:visibility="gone"
+                        android:src="@drawable/profile_edit" />
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:hint="Android Developer"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1sp"
+                        android:fontFamily="@font/medium"
+                        android:hint="android.app@gmail.com"
+                        android:textColor="#B3D4D9E6"
+                        android:textColorHint="#B3D4D9E6"
+                        android:textSize="@dimen/_11sp"
+                        android:visibility="gone" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_4sp"
+                        android:src="@drawable/resourses" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Resources"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/myProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_3sp"
+                        android:src="@drawable/my_profile" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text=" My Profile"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/trainingStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/iv_training" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Training Status"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llVisitingCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:src="@drawable/iv_visiting_card" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/visiting_card"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/shareProposal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:src="@drawable/promote" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Business Proposal"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llTrainings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_20sp"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:src="@drawable/iv_webinar" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/trainings"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/referFriend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/refer_friend" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Refer(Earn 2000 Rs)"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/referList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/refer_friend" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/refer_list"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/promote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:src="@drawable/promote" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Promote"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/promoteList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:src="@drawable/promote" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/promote_list"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/offers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/offers" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Offers"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/viewCertificate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:paddingLeft="@dimen/_3sp"
+                        android:paddingTop="@dimen/_5sp"
+                        android:paddingEnd="@dimen/_3sp"
+                        android:src="@drawable/view_agree" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="View Certificate"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/agreement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:paddingLeft="@dimen/_3sp"
+                        android:paddingTop="@dimen/_5sp"
+                        android:paddingEnd="@dimen/_3sp"
+                        android:src="@drawable/view_agree" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="View Agreement"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/share" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Share"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/support"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/support" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/support"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/notificationSetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:padding="@dimen/_2sp"
+                        android:src="@drawable/iv_noti" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/notification_settings"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/addSalesAgent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/add_sale_agent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Add Sales Agent"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llTraining"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:src="@drawable/iv_visiting_card" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/trainings"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/privacyPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:paddingHorizontal="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/privacy_policy" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text=" Privacy Policy"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/termsCondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/terms_condi" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Terms and Conditions"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/refundPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_2sp"
+                        android:src="@drawable/refund_policy" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Refund Policy"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/unblock_Crm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:paddingLeft="@dimen/_3sp"
+                        android:paddingTop="@dimen/_5sp"
+                        android:paddingEnd="@dimen/_3sp"
+                        android:paddingBottom="@dimen/_5sp"
+                        android:src="@drawable/unlock" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/unblock_crm"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/tutorials"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingBottom="@dimen/_10sp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sp"
+                        android:layout_height="@dimen/_25sp"
+                        android:background="@drawable/menu_icon_border"
+                        android:padding="@dimen/_5sp"
+                        android:src="@drawable/webinar" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Tutorials"
+                        android:textColor="#E6D4D9E6"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_15sp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_20sp"
+                android:paddingTop="@dimen/_10sp"
+                android:paddingBottom="@dimen/_10sp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_25sp"
+                    android:layout_height="@dimen/_25sp"
+                    android:src="@drawable/logout" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sp"
+                    android:fontFamily="@font/medium"
+                    android:text="Logout"
+                    android:textColor="#F86202"
+                    android:textSize="@dimen/_14sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

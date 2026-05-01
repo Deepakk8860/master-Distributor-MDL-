@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:theme="@style/MaterialTheme">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close"
+        android:layout_width="@dimen/_35sp"
+        android:layout_height="@dimen/_35sp"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/_7sp"
+        android:layout_marginEnd="@dimen/_7sp"
+        android:background="@drawable/custom_trans_button"
+        android:padding="@dimen/_5sp"
+        android:src="@drawable/close" />
+
+    <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sp"
+        android:layout_marginStart="@dimen/_20sp"
+        android:layout_marginTop="@dimen/_5sp"
+        android:layout_marginEnd="@dimen/_20sp"
+        android:layout_marginBottom="@dimen/_5sp"
+        android:orientation="horizontal"
+        app:strokeColor="@color/hint"
+        app:strokeWidth="@dimen/_1sp">
+
+        <com.android.masterdistributormdl.gskDistributor.signature.SignaturePad
+            android:id="@+id/signatureView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:penColor="@color/colorPrimary" />
+    </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_5sp">
+
+        <Button
+            android:id="@+id/clear"
+            style="@style/button"
+            android:layout_marginStart="@dimen/_20sp"
+            android:layout_marginTop="@dimen/_15sp"
+            android:layout_marginEnd="@dimen/_10sp"
+            android:layout_marginBottom="@dimen/_15sp"
+            android:layout_weight="1"
+            android:background="@drawable/gray_button"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/sign"
+            style="@style/button"
+            android:layout_marginStart="@dimen/_10sp"
+            android:layout_marginTop="@dimen/_15sp"
+            android:layout_marginEnd="@dimen/_20sp"
+            android:layout_marginBottom="@dimen/_15sp"
+            android:layout_weight="1"
+            android:text="I Agree" />
+
+    </LinearLayout>
+</LinearLayout>

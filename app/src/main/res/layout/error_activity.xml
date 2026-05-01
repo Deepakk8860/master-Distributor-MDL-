@@ -1,0 +1,52 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/no_results2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_180sp"
+                android:layout_height="wrap_content"
+
+                android:adjustViewBounds="true"
+                android:src="@drawable/no_result_logo" />
+
+            <TextView
+                android:layout_marginBottom="@dimen/_120sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sp"
+                android:fontFamily="@font/medium"
+                android:text="Service Unavailable"
+                android:textColor="#888E9E"
+                android:textSize="@dimen/_16sp" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/button"
+            style="@style/button"
+            android:layout_width="@dimen/_150sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_45sp"
+            android:text="Back To home" />
+
+    </RelativeLayout>
+</layout>

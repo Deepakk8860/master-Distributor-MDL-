@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "Dashboard",
+    "icon": "dashboard"
+  },
+  {
+    "id": "2",
+    "name": "Distributors",
+    "icon": "shop"
+  },
+  {
+    "id": "3",
+    "name": "Leads",
+    "icon": "iv_lead"
+  },
+  {
+    "id": "4",
+    "name": "Services",
+    "icon": "services"
+  },
+  {
+    "id": "5",
+    "name": "Reports",
+    "icon": "reports"
+  },
+
+]

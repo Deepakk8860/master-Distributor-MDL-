@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.ServicesModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#132D5F"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center|start"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_25sp"
+                android:paddingBottom="@dimen/_15sp">
+
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="@dimen/_35sp"
+                    android:layout_height="@dimen/_35sp"
+                    android:layout_marginStart="@dimen/_15sp"
+                    android:src="@drawable/menu" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sp"
+                    android:layout_marginStart="@dimen/_10sp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/white_logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|end"
+                    android:paddingEnd="@dimen/_10sp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtConsultant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Help"
+                        android:background="@drawable/background_consultant"
+                        android:textSize="11sp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/poppins_medium"
+                        android:layout_marginHorizontal="@dimen/_10sp"
+                        android:paddingHorizontal="@dimen/_12sp"
+                        android:paddingVertical="@dimen/_2sp"
+                        android:textColor="@color/black"/>
+
+
+                    <ImageView
+                        android:id="@+id/support"
+                        android:layout_width="@dimen/_38sp"
+                        android:layout_height="@dimen/_38sp"
+                        android:layout_marginStart="@dimen/_5sp"
+                        android:padding="@dimen/_7sp"
+                        android:src="@drawable/helpdesk" />
+
+                    <ImageView
+                        android:id="@+id/notification"
+                        android:layout_width="@dimen/_35sp"
+                        android:layout_height="@dimen/_35sp"
+                        android:padding="@dimen/_7sp"
+                        android:src="@drawable/bell_light" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sp"
+                android:background="@drawable/main_"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:layout_marginBottom="@dimen/_10sp"
+                    android:fontFamily="@font/bold"
+                    android:includeFontPadding="false"
+                    android:paddingStart="@dimen/_10sp"
+                    android:text="Services and Commission"
+                    android:textColor="#132D5F"
+                    android:textSize="@dimen/_16sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/setRates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:visibility="gone"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/services_report"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+
+                            android:paddingStart="@dimen/_14sp"
+                            android:text="Taxation &amp; Registration"
+                            android:textColor="#132D5F"
+
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvAccounting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/balance_sheet"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_14sp"
+                            android:text="@string/accounting_balance_sheet"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/company"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_14sp"
+                            android:text="@string/company"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvCompliances"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/compliance"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_14sp"
+                            android:text="@string/compliances"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvDsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/dsc"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_14sp"
+                            android:text="@string/dsc"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/webApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/web_app_services"
+                            app:contentPadding="@dimen/_7sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:lineSpacingExtra="@dimen/_2sp"
+                            android:paddingStart="@dimen/_14sp"
+                            android:text="Design &amp; Development Services"
+                            android:textColor="#132D5F"
+
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/setFinancialServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/iv_finance"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_14sp"
+                            android:text="Financial Services"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvGstReturn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/services_report"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_14sp"
+                            android:text="@string/gst_returns"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvItr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/itr"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_14sp"
+                            android:text="@string/itr"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/setMicroServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/iv_micro_atm"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_14sp"
+                            android:text="@string/micro_services2"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/other_services"
+                            app:contentPadding="@dimen/_7sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+
+                            android:paddingStart="@dimen/_14sp"
+                            android:text="Other Services"
+                            android:textColor="#132D5F"
+
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvGstRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/registeration"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_14sp"
+                            android:text="@string/registration"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTrademark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/trademark"
+                            app:contentPadding="@dimen/_8sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_14sp"
+                            android:text="@string/trademark"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

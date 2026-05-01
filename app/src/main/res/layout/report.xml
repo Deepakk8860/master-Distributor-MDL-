@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.ReportModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#132D5F"
+                android:gravity="center|start"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_25sp"
+                android:paddingBottom="@dimen/_65sp">
+
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="@dimen/_35sp"
+                    android:layout_height="@dimen/_35sp"
+                    android:layout_marginStart="@dimen/_15sp"
+                    android:src="@drawable/menu" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sp"
+                    android:layout_marginStart="@dimen/_10sp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/white_logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|end"
+                    android:paddingEnd="@dimen/_10sp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtConsultant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Help"
+                        android:background="@drawable/background_consultant"
+                        android:textSize="11sp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/poppins_medium"
+                        android:layout_marginHorizontal="@dimen/_10sp"
+                        android:paddingHorizontal="@dimen/_12sp"
+                        android:paddingVertical="@dimen/_2sp"
+                        android:textColor="@color/black"/>
+
+
+                    <ImageView
+                        android:id="@+id/support"
+                        android:layout_width="@dimen/_38sp"
+                        android:layout_height="@dimen/_38sp"
+                        android:layout_marginStart="@dimen/_5sp"
+                        android:padding="@dimen/_7sp"
+                        android:src="@drawable/helpdesk" />
+
+                    <ImageView
+                        android:id="@+id/notification"
+                        android:layout_width="@dimen/_35sp"
+                        android:layout_height="@dimen/_35sp"
+                        android:padding="@dimen/_7sp"
+                        android:src="@drawable/bell_light" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_minus30sp"
+                android:background="@drawable/main_"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:layout_marginBottom="@dimen/_10sp"
+                    android:fontFamily="@font/bold"
+                    android:includeFontPadding="false"
+
+                    android:paddingStart="@dimen/_10sp"
+                    android:text="Reports"
+                    android:textColor="#132D5F"
+
+                    android:textSize="@dimen/_16sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reportEarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/report_shops"
+                            app:contentPadding="@dimen/_5sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_12sp"
+                            android:text="Earning Report"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reportDownloads"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/report_downlods"
+                            app:contentPadding="@dimen/_5sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_12sp"
+                            android:text="Customers Report"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reportShop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/report_shops"
+                            app:contentPadding="@dimen/_5sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+
+                            android:paddingStart="@dimen/_12sp"
+                            android:text="Retailer Report"
+                            android:textColor="#132D5F"
+
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/distributorReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/report_shops"
+                            app:contentPadding="@dimen/_5sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_12sp"
+                            android:text="Distributor Report"
+                            android:textColor="#132D5F"
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reportOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/report_orders"
+                            app:contentPadding="@dimen/_5sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+
+                            android:paddingStart="@dimen/_12sp"
+                            android:text="Orders Report"
+                            android:textColor="#132D5F"
+
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/salesAgentReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="#F0EEEF"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#1D3667"
+                    app:strokeWidth="@dimen/_1sp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/shop_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_17sp"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/_33sp"
+                            android:layout_height="@dimen/_33sp"
+                            android:background="@drawable/orange_rect"
+                            android:src="@drawable/agent_report"
+
+                            app:contentPadding="@dimen/_5sp"
+                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+
+                            android:paddingStart="@dimen/_12sp"
+                            android:text="Sales Agent Report"
+                            android:textColor="#132D5F"
+
+                            android:textSize="@dimen/_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sp"
+                            android:layout_height="@dimen/_15sp"
+
+                            android:src="@drawable/next_shop" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

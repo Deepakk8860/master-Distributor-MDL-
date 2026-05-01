@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.KycModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center|start"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingTop="@dimen/_20sp"
+            android:paddingBottom="@dimen/_70sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:src="@drawable/arrow_left_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+                android:fontFamily="@font/medium"
+                android:text="Account Settings"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_16sp" />
+
+
+        </LinearLayout>
+
+
+        <com.android.masterdistributormdl.gskDistributor.utils.CornorNestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_minus45sp"
+            android:fillViewport="true"
+            app:radiusTopLeft="@dimen/_45sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/login_"
+                android:orientation="vertical">
+
+
+                <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_25sp"
+                    android:paddingTop="@dimen/_12sp"
+                    android:paddingEnd="@dimen/_25sp"
+                    app:backgroundColor="@color/white"
+                    app:radiusTopLeft="@dimen/_45sp"
+                    app:radiusTopRight="@dimen/_45sp">
+
+                    <TextView
+                        android:id="@+id/bankTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:background="@drawable/tab_selector"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_5sp"
+                        android:paddingBottom="@dimen/_12sp"
+                        android:text="Bank Account"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_13sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1sp"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:layout_width="@dimen/_1sp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/_5sp"
+                        android:background="#CCD2E3" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1sp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/upiTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sp"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_5sp"
+                        android:paddingBottom="@dimen/_12sp"
+                        android:text="UPI ID"
+                        android:textColor="#801D3667"
+
+                        android:textSize="@dimen/_13sp" />
+
+                </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sp"
+                    android:background="#F0EEEF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_20sp"
+                    android:paddingEnd="@dimen/_20sp"
+                    android:paddingBottom="@dimen/_15sp">
+
+                    <TextView
+                        android:id="@+id/tabName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:includeFontPadding="false"
+                        android:text="Bank Details"
+                        android:textColor="#132D5F"
+                        android:textSize="@dimen/_16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/upiLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/upiNameLay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/upiName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/normal"
+                                android:hint="Beneficiary Name*"
+                                android:inputType="textCapWords"
+                                android:maxLength="100"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#152B57"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/upiIdLay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/upiId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/normal"
+                                android:hint="Beneficiary UPI ID*"
+                                android:inputType="textEmailAddress"
+                                android:maxLength="50"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#152B57"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bankLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ifscCodeLay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/ifscCode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/normal"
+                                android:hint="IFSC Code*"
+                                android:inputType="textCapCharacters"
+                                android:maxLength="11"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#152B57"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/bankNameLay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/bankName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/normal"
+                                android:hint="Bank Name*"
+                                android:inputType="textCapWords"
+                                android:maxLength="100"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#152B57"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/accountNo1Lay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/accountNo1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/normal"
+                                android:hint="Bank Account Number*"
+                                android:inputType="number"
+                                android:maxLength="20"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#152B57"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/accountNo2Lay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/accountNo2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/normal"
+                                android:hint="Confirm Bank Account Number*"
+                                android:inputType="number"
+                                android:maxLength="20"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#152B57"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/accountHolderLay"
+                            style="@style/OutlinedBoxStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/accountHolder"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/normal"
+                                android:hint="Name as per Bank Records*"
+                                android:importantForAutofill="no"
+                                android:inputType="textCapWords"
+                                android:paddingStart="@dimen/_15sp"
+                                android:paddingEnd="@dimen/_15sp"
+                                android:singleLine="true"
+                                android:textColor="#152B57"
+                                android:textCursorDrawable="@drawable/color_cursor"
+                                android:textSize="@dimen/_12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/save"
+                        style="@style/button"
+                        android:layout_marginTop="@dimen/_10sp"
+                        android:text="Save" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.android.masterdistributormdl.gskDistributor.utils.CornorNestedScrollView>
+
+
+    </LinearLayout>
+
+
+</layout>

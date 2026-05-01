@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.SettlementsModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#132D5F"
+                android:gravity="center|start"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_15sp"
+                android:paddingTop="@dimen/_25sp"
+                android:paddingBottom="@dimen/_60sp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/back"
+                    android:layout_width="@dimen/_35sp"
+                    android:layout_height="@dimen/_35sp"
+                    android:src="@drawable/arrow_left_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sp"
+                    android:fontFamily="@font/medium"
+                    android:text="Settlement"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/_16sp" />
+
+
+            </LinearLayout>
+
+            <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_minus40sp"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_20sp"
+                app:radiusTopLeft="@dimen/_40sp"
+                app:radiusTopRight="@dimen/_40sp"
+                app:backgroundColor="#F0EEEF">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sp"
+                    android:fontFamily="@font/bold"
+                    android:text="Settlement Detail"
+                    android:textColor="#132D5F"
+                    android:textSize="@dimen/_14sp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adapter="@{model.earnsAdapter}"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/_5sp"
+                    android:paddingBottom="@dimen/_15sp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/settlement_adapter" />
+
+
+            </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

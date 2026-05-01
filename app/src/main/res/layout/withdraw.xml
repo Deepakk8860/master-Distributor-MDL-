@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.WithdrawModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/headerLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center|start"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_15sp"
+            android:paddingBottom="@dimen/_10sp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:layout_marginStart="@dimen/_10sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+
+                android:fontFamily="@font/medium"
+
+
+                android:text="Withdrawal"
+                android:textColor="@color/white"
+
+                android:textSize="@dimen/_16sp" />
+
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/headerLay">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#132D5F"
+                        android:paddingBottom="@dimen/_20sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/settlement_chart" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sp"
+
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/comiAmt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:includeFontPadding="false"
+
+                                android:text="₹1,50,000"
+                                android:textColor="#FF6400"
+
+                                android:textSize="@dimen/_20sp" />
+
+                            <TextView
+                                android:id="@+id/userName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_3sp"
+                                android:fontFamily="@font/normal"
+                                android:text="Available Commission"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/_14sp" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_minus45sp"
+                        android:background="@drawable/main_"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/_10sp"
+                        android:paddingTop="@dimen/_20sp"
+                        android:paddingEnd="@dimen/_10sp"
+                        android:paddingBottom="@dimen/_10sp">
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/kycLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                            app:cardBackgroundColor="#F0EEEF"
+                            app:cardCornerRadius="@dimen/_10sp"
+                            app:cardElevation="@dimen/_3sp"
+                            app:strokeColor="#1D3667"
+                            app:strokeWidth="@dimen/_1sp">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/shop_2" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_17sp"
+                                android:paddingEnd="@dimen/_10sp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_33sp"
+                                    android:layout_height="@dimen/_33sp"
+
+                                    android:src="@drawable/kyc" />
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/medium"
+                                    android:includeFontPadding="false"
+                                    android:paddingStart="@dimen/_14sp"
+                                    android:text="KYC"
+                                    android:textColor="#132D5F"
+                                    android:textSize="@dimen/_14sp" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_15sp"
+                                    android:layout_height="@dimen/_15sp"
+
+                                    android:src="@drawable/next_shop" />
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/settingsLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                            app:cardBackgroundColor="#F0EEEF"
+                            app:cardCornerRadius="@dimen/_10sp"
+                            app:cardElevation="@dimen/_3sp"
+                            app:strokeColor="#1D3667"
+                            app:strokeWidth="@dimen/_1sp">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/shop_2" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_17sp"
+                                android:paddingEnd="@dimen/_10sp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_33sp"
+                                    android:layout_height="@dimen/_33sp"
+
+                                    android:src="@drawable/account_setting" />
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/medium"
+                                    android:includeFontPadding="false"
+
+                                    android:paddingStart="@dimen/_14sp"
+                                    android:text="Settings"
+                                    android:textColor="#132D5F"
+
+                                    android:textSize="@dimen/_14sp" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_15sp"
+                                    android:layout_height="@dimen/_15sp"
+
+                                    android:src="@drawable/next_shop" />
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/withdrawLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                            app:cardBackgroundColor="#F0EEEF"
+                            app:cardCornerRadius="@dimen/_10sp"
+                            app:cardElevation="@dimen/_3sp"
+                            app:strokeColor="#1D3667"
+                            app:strokeWidth="@dimen/_1sp">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/shop_2" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_17sp"
+                                android:paddingEnd="@dimen/_10sp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_33sp"
+                                    android:layout_height="@dimen/_33sp"
+
+                                    android:src="@drawable/withdraw" />
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/medium"
+                                    android:includeFontPadding="false"
+
+                                    android:paddingStart="@dimen/_14sp"
+                                    android:text="Withdraw"
+                                    android:textColor="#132D5F"
+
+                                    android:textSize="@dimen/_14sp" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_15sp"
+                                    android:layout_height="@dimen/_15sp"
+
+                                    android:src="@drawable/next_shop" />
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/settlementLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                            app:cardBackgroundColor="#F0EEEF"
+                            app:cardCornerRadius="@dimen/_10sp"
+                            app:cardElevation="@dimen/_3sp"
+                            app:strokeColor="#1D3667"
+                            app:strokeWidth="@dimen/_1sp">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/shop_2" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_17sp"
+                                android:paddingEnd="@dimen/_10sp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_33sp"
+                                    android:layout_height="@dimen/_33sp"
+
+                                    android:src="@drawable/settlement" />
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/medium"
+                                    android:includeFontPadding="false"
+
+                                    android:paddingStart="@dimen/_14sp"
+                                    android:text="Settlement"
+                                    android:textColor="#132D5F"
+
+                                    android:textSize="@dimen/_14sp" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_15sp"
+                                    android:layout_height="@dimen/_15sp"
+
+                                    android:src="@drawable/next_shop" />
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

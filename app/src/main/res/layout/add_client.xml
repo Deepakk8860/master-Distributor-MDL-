@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.home.HomeModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4F0F0"
+            android:layout_above="@+id/btnSave"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_3sp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/backButton"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="@dimen/_8sp"
+                        android:src="@drawable/baseline_arrow_back_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/add_new_client"
+                        android:textColor="#000000"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/backButton"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Spacing -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp"
+                    android:paddingVertical="@dimen/_16sp">
+                    <!-- Client Name -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/client_name"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textStyle="bold"
+                        android:textColor="#000000" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/clientName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sp"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/normal"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:hint="@string/e_g_katherine_lim"
+                        android:inputType="textPersonName"
+                        android:padding="12dp" />
+
+
+                    <TextView
+                        android:id="@+id/txtClientError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Client name is required*"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_6sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp"/>
+
+
+                    <!-- Display Name -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:text="@string/display_name"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_12sp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/displayName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_text_bg_mdl"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/normal"
+                            android:hint="@string/e_g_katherine"
+                            android:inputType="textPersonName"
+                            android:padding="12dp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/copyIcon"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="12dp"
+                            android:src="@drawable/iv_copy" />
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <!-- Info text -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sp"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:visibility="gone"
+                    android:drawablePadding="@dimen/_8sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/display_name_"
+                    android:textColor="#6E6E6E"
+                    android:textSize="13sp"
+                    app:drawableEndCompat="@drawable/iv_info_lead" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp"
+                    android:paddingVertical="@dimen/_16sp">
+
+                    <!-- Mobile Number -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textStyle="bold"
+                        android:text="@string/mobile_number"
+                        android:textSize="13sp"
+                        android:textColor="#000000" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/edit_text_bg_mdl"
+                            android:fontFamily="@font/bold"
+                            android:padding="12dp"
+                            android:text="@string/_91" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/mobileNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_bg_mdl"
+                            android:fontFamily="@font/normal"
+                            android:textSize="14sp"
+                            android:hint="Enter mobile number"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:padding="12dp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <TextView
+                        android:id="@+id/txtMobileError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mobile_number_is_required"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_6sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp"/>
+                    <!-- WhatsApp Number -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:text="@string/whatsapp_number"
+                        android:textColor="#000000" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/edit_text_bg_mdl"
+                            android:padding="12dp"
+                            android:text="@string/_91"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/whatsappNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/normal"
+                            android:textSize="14sp"
+                            android:background="@drawable/edit_text_bg_mdl"
+                            android:hint="Enter whatsApp number"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:padding="12dp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp"
+                    android:paddingVertical="@dimen/_16sp">
+
+                    <!-- Email Address -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:text="@string/email_address"
+                        android:textColor="#000000" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/emailAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:fontFamily="@font/normal"
+                        android:textSize="14sp"
+                        android:hint="@string/e_g_example_gmail_com"
+                        android:inputType="textEmailAddress"
+                        android:padding="12dp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp"
+                    android:paddingVertical="@dimen/_16sp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textStyle="bold"
+                        android:text="@string/pincode"
+                        android:textSize="13sp"
+                        android:textColor="#000000" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtPincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:fontFamily="@font/normal"
+                        android:textSize="14sp"
+                        android:maxLength="6"
+                        android:hint="@string/e_g_example_pincode"
+                        android:inputType="number"
+                        android:padding="12dp" />
+
+                    <TextView
+                        android:id="@+id/txtPincodeError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pincode_is_required"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_6sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp"/>
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llCityState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textStyle="bold"
+                            android:text="DISTRICT NAME"
+                            android:layout_marginTop="@dimen/_16sp"
+                            android:textSize="13sp"
+                            android:textColor="#000000" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edtCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sp"
+                            android:background="@drawable/edt_disabled_mdl"
+                            android:fontFamily="@font/normal"
+                            android:textSize="14sp"
+                            android:focusable="false"
+                            android:inputType="number"
+                            android:padding="12dp" />
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/_16sp"
+                            android:text="STATE"
+                            android:textSize="13sp"
+                            android:textColor="#000000" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edtState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sp"
+                            android:background="@drawable/edt_disabled_mdl"
+                            android:fontFamily="@font/normal"
+                            android:textSize="14sp"
+                            android:focusable="false"
+                            android:inputType="number"
+                            android:padding="12dp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp"
+                    android:paddingVertical="@dimen/_16sp">
+
+                    <!-- Notes -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textStyle="bold"
+                        android:text="@string/notes"
+                        android:textSize="13sp"
+                        android:textColor="#000000" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="@dimen/_12sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:gravity="top"
+                        android:hint="@string/add_notes_about_your_client_here"
+                        android:inputType="textMultiLine"
+                        android:padding="12dp"
+                        android:fontFamily="@font/normal"
+                        android:textSize="14sp" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Save Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sp"
+            android:layout_marginTop="@dimen/_15sp"
+            android:layout_marginBottom="@dimen/_15sp"
+            android:background="@drawable/login_button"
+            android:backgroundTint="@null"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/medium"
+            android:text="@string/save"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+
+
+</layout>

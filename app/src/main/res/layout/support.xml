@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.SupportModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:id="@+id/topLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingTop="@dimen/_15sp"
+
+            android:paddingBottom="@dimen/_50sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+                android:fontFamily="@font/medium"
+                android:text="Support"
+                android:textColor="@color/white"
+
+                android:textSize="@dimen/_16sp" />
+        </LinearLayout>
+
+        <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_minus30sp"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sp"
+            app:backgroundColor="#F0EEEF"
+            app:radiusTopLeft="@dimen/_30sp"
+            app:radiusTopRight="@dimen/_30sp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sp"
+                android:layout_marginBottom="@dimen/_10sp"
+                android:fontFamily="@font/bold"
+                android:includeFontPadding="false"
+
+                android:paddingStart="@dimen/_10sp"
+                android:text="Support"
+                android:textColor="#132D5F"
+
+                android:textSize="@dimen/_16sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/createTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sp"
+                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                app:cardBackgroundColor="#F0EEEF"
+                app:cardCornerRadius="@dimen/_10sp"
+                app:cardElevation="@dimen/_3sp"
+                app:strokeColor="#1D3667"
+                app:strokeWidth="@dimen/_1sp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/shop_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_17sp"
+                    android:paddingEnd="@dimen/_10sp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/_33sp"
+                        android:layout_height="@dimen/_33sp"
+                        android:background="@drawable/orange_rect"
+                        android:src="@drawable/create_ticket"
+                        app:contentPadding="@dimen/_5sp"
+                        app:shapeAppearance="@style/CornerSize25Percent" />
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+
+                        android:paddingStart="@dimen/_14sp"
+                        android:text="Create New Ticket"
+                        android:textColor="#132D5F"
+
+                        android:textSize="@dimen/_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_15sp"
+                        android:layout_height="@dimen/_15sp"
+
+                        android:src="@drawable/next_shop" />
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/activeTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sp"
+                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                app:cardBackgroundColor="#F0EEEF"
+                app:cardCornerRadius="@dimen/_10sp"
+                app:cardElevation="@dimen/_3sp"
+                app:strokeColor="#1D3667"
+                app:strokeWidth="@dimen/_1sp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/shop_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_17sp"
+                    android:paddingEnd="@dimen/_10sp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/_33sp"
+                        android:layout_height="@dimen/_33sp"
+                        android:background="@drawable/orange_rect"
+                        android:src="@drawable/active_ticket"
+                        app:contentPadding="@dimen/_5sp"
+                        app:shapeAppearance="@style/CornerSize25Percent" />
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+
+                        android:paddingStart="@dimen/_14sp"
+                        android:text="Active Tickets"
+                        android:textColor="#132D5F"
+
+                        android:textSize="@dimen/_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_15sp"
+                        android:layout_height="@dimen/_15sp"
+
+                        android:src="@drawable/next_shop" />
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/closeTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sp"
+                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                app:cardBackgroundColor="#F0EEEF"
+                app:cardCornerRadius="@dimen/_10sp"
+                app:cardElevation="@dimen/_3sp"
+                app:strokeColor="#1D3667"
+                app:strokeWidth="@dimen/_1sp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/shop_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_17sp"
+                    android:paddingEnd="@dimen/_10sp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/_33sp"
+                        android:layout_height="@dimen/_33sp"
+                        android:background="@drawable/orange_rect"
+                        android:src="@drawable/close_ticket"
+                        app:contentPadding="@dimen/_5sp"
+                        app:shapeAppearance="@style/CornerSize25Percent" />
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+
+                        android:paddingStart="@dimen/_14sp"
+                        android:text="Closed Tickets"
+                        android:textColor="#132D5F"
+
+                        android:textSize="@dimen/_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_15sp"
+                        android:layout_height="@dimen/_15sp"
+
+                        android:src="@drawable/next_shop" />
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+                android:id="@+id/llHelplineCall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_40sp"
+                android:layout_marginTop="@dimen/_30sp"
+                android:layout_marginEnd="@dimen/_40sp"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/_10sp"
+                android:paddingStart="@dimen/_10sp"
+                android:paddingEnd="@dimen/_10sp"
+                app:backgroundColor="#FEFEFE"
+                app:radius="@dimen/_15sp"
+                app:strokeColor="#CCD2E3"
+                app:strokeWidth="@dimen/_1sp">
+
+
+                <LinearLayout
+                    android:id="@+id/llCallRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/_16sp"
+                    android:orientation="vertical"
+                  >
+
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivSupport"
+                        android:layout_width="@dimen/_35sp"
+                        android:layout_height="@dimen/_35sp"
+                        android:elevation="@dimen/_3sp"
+                        android:src="@drawable/call_agent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/helpline_number"
+                        android:layout_marginTop="@dimen/_5sp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/bold"
+                        android:textColor="@color/black"/>
+
+
+                    <TextView
+                        android:id="@+id/txtHelpLineNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_0120_6860_788"
+                        android:textSize="16sp"
+                        android:layout_marginTop="@dimen/_5sp"
+                        android:fontFamily="@font/medium"
+                        android:textColor="@color/black"/>
+
+
+                </LinearLayout>
+
+
+            </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+
+        </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+
+    </LinearLayout>
+</layout>

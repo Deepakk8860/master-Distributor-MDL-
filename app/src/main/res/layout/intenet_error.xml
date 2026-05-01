@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_back"
+    android:orientation="vertical"
+    android:padding="@dimen/_20sp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sp"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_2sp"
+        android:text="Internet connection error"
+        android:textColor="#25233C"
+        android:textSize="@dimen/_15sp" />
+
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sp"
+        android:fontFamily="@font/normal"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_2sp"
+        android:text="@string/internet_error"
+        android:textColor="#25233C"
+        android:textSize="@dimen/_13sp" />
+
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_20sp"
+        android:layout_marginBottom="@dimen/_5sp"
+        android:background="@drawable/login_button"
+        android:fontFamily="@font/medium"
+        android:includeFontPadding="false"
+        android:letterSpacing=".03"
+        android:minWidth="@dimen/_90sp"
+        android:text="Setting"
+        android:paddingHorizontal="@dimen/_20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sp" />
+</LinearLayout>

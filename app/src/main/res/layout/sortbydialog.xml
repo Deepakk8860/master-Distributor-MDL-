@@ -1,0 +1,129 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_droup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:padding="@dimen/_16sp"
+            android:text="Filter By"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/iv_close"
+            android:layout_gravity="start"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+
+
+        <View
+            android:id="@+id/viewline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sp"
+            android:background="@color/view_color"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_16sp"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingVertical="@dimen/_12sp">
+
+        <LinearLayout
+            android:id="@+id/checkboxContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <CheckBox
+                android:id="@+id/cbAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All"
+                android:textColor="#25233C"
+                android:textSize="@dimen/_14sp"
+                android:fontFamily="@font/poppins_medium" />
+
+            <CheckBox
+                android:id="@+id/cbSystem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="System Leads"
+                android:textColor="#25233C"
+                android:layout_marginTop="@dimen/_10sp"
+                android:textSize="@dimen/_14sp"
+                android:fontFamily="@font/poppins_medium" />
+
+            <CheckBox
+                android:id="@+id/cbManual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Manual Leads"
+                android:textColor="#25233C"
+                android:layout_marginTop="@dimen/_10sp"
+                android:textSize="@dimen/_14sp"
+                android:fontFamily="@font/poppins_medium" />
+
+            <CheckBox
+                android:id="@+id/cbNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Leads"
+                android:textColor="#25233C"
+                android:layout_marginTop="@dimen/_10sp"
+                android:textSize="@dimen/_14sp"
+                android:fontFamily="@font/poppins_medium" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnApply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_6sp"
+                android:layout_marginTop="@dimen/_25sp"
+                android:layout_marginBottom="@dimen/_25sp"
+                android:background="@drawable/login_button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/medium"
+                android:text="@string/apply"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

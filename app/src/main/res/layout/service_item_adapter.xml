@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_10sp"
+        android:paddingEnd="@dimen/_10sp"
+        android:paddingBottom="@dimen/_7sp">
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sp"
+            android:layout_marginTop="@dimen/_7sp"
+            android:background="#1A1D3667" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/medium"
+                android:text="Logo Design"
+                android:textAlignment="center"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="@dimen/_3sp"
+                android:paddingEnd="@dimen/_5sp"
+                android:textColor="#CC1D3667"
+                android:textSize="@dimen/_10sp" />
+
+
+            <LinearLayout
+                android:id="@+id/llPrice"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight=".6"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/customerPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:includeFontPadding="false"
+                    android:text="₹600"
+                    android:textColor="#132D5F"
+                    android:textSize="@dimen/_10sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center"
+                android:textAlignment="center"
+                android:fontFamily="@font/bold"
+                android:includeFontPadding="false"
+                android:text="₹750"
+                android:textColor="#1D3667"
+                android:textSize="@dimen/_10sp" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/distComi"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center"
+                android:textAlignment="center"
+                android:fontFamily="@font/bold"
+                android:includeFontPadding="false"
+                android:text="₹50"
+                android:textColor="#132D5F"
+                android:textSize="@dimen/_10sp" />
+
+            <TextView
+                android:id="@+id/comi"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center"
+                android:textAlignment="center"
+                android:fontFamily="@font/bold"
+                android:includeFontPadding="false"
+                android:text="₹50"
+                android:textColor="#132D5F"
+                android:textSize="@dimen/_10sp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sp"
+            android:layout_marginTop="@dimen/_7sp"
+            android:visibility="gone"
+            android:background="#1A1D3667" />
+    </LinearLayout>
+
+</layout>

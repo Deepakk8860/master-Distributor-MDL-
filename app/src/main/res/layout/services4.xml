@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.Services1Model" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/headerLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingTop="@dimen/_20sp"
+            android:paddingEnd="@dimen/_15sp"
+            android:paddingBottom="@dimen/_75sp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_30sp"
+                android:layout_height="@dimen/_30sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+                android:fontFamily="@font/medium"
+                android:lineSpacingExtra="@dimen/_3sp"
+                android:text="Financial Services"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sp" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_90sp"
+            android:layout_marginBottom="@dimen/_minus35sp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_35sp"
+            app:cardElevation="0sp"
+            app:contentPaddingBottom="@dimen/_35sp">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adapter="@{model.services1Adapter}"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/_10sp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/service2_adapter" />
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</layout>

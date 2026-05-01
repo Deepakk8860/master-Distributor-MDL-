@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.HomeModelLead" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="#ecd5c3"
+        android:paddingStart="@dimen/_2sp"
+        android:paddingEnd="@dimen/_6sp"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/buttonLay"
+            android:layout_marginBottom="@dimen/_6sp"
+            android:fillViewport="true">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_qr_code_2"
+                >
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_160sp"
+                    android:layout_margin="@dimen/_2sp"
+                    android:background="@drawable/background_qr_code"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="203dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgQr"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/iv_anupam_kher"
+                            android:scaleType="fitXY"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/userImage"
+                    android:layout_width="@dimen/_80sp"
+                    android:layout_height="@dimen/_80sp"
+                    android:layout_marginStart="@dimen/_18sp"
+                    android:layout_marginTop="@dimen/_minus40sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="@dimen/_2sp"
+                    app:layout_constraintTop_toBottomOf="@+id/constTop"
+                    app:shapeAppearance="@style/CornerSize50Percent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_120sp"
+                    android:layout_height="@dimen/_60sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/userImage"
+                    app:cardCornerRadius="@dimen/_6sp"
+                    android:layout_marginEnd="@dimen/_20sp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:paddingHorizontal="@dimen/_6sp"
+                        android:src="@drawable/big_logo"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sp"
+                    android:fontFamily="@font/bold"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sp"
+                    app:layout_constraintStart_toStartOf="@+id/userImage"
+                    app:layout_constraintTop_toBottomOf="@+id/userImage" />
+
+                <TextView
+                    android:id="@+id/txtSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sp"
+                    android:fontFamily="@font/medium"
+                    android:text="Specialist"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sp"
+                    app:layout_constraintStart_toStartOf="@+id/name"
+                    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                <TextView
+                    android:id="@+id/txtGst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sp"
+                    android:fontFamily="@font/medium"
+                    android:text="GST Suvidha Kendra®"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintStart_toStartOf="@+id/name"
+                    app:layout_constraintTop_toBottomOf="@+id/txtSpecialist" />
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/emailLay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sp"
+                    app:layout_constraintStart_toStartOf="@+id/txtGst"
+                    app:layout_constraintTop_toBottomOf="@+id/txtGst">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_28sp"
+                        android:layout_height="@dimen/_28sp"
+                        android:src="@drawable/image3" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:paddingStart="@dimen/_12sp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMobile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="@+id/userImage"
+                    app:layout_constraintTop_toBottomOf="@+id/emailLay">
+
+                    <ImageView
+                        android:layout_width="@dimen/_28sp"
+                        android:layout_height="@dimen/_28sp"
+                        android:src="@drawable/image4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/mobileNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_12sp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_12sp"
+                            android:text="Mobile"
+                            android:layout_marginTop="@dimen/_4sp"
+                            android:textColor="#a4a8a9"
+                            android:textSize="@dimen/_13sp" />
+
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/serviceLink"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="@+id/userImage"
+                    app:layout_constraintTop_toBottomOf="@+id/llMobile">
+
+                    <ImageView
+                        android:layout_width="@dimen/_28sp"
+                        android:layout_height="@dimen/_28sp"
+                        android:src="@drawable/image5" />
+
+                    <TextView
+                        android:id="@+id/txtServiceLink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+                        android:paddingStart="@dimen/_12sp"
+                        android:text="Service Link"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="@dimen/_8sp"
+            android:paddingBottom="@dimen/_8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/llDownload"
+                android:layout_width="@dimen/_130sp"
+                android:layout_height="@dimen/_35sp"
+                android:layout_marginStart="@dimen/_10sp"
+                android:background="@drawable/client_share_whatsapp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sp"
+                        android:layout_height="@dimen/_20sp"
+                        android:src="@drawable/download" />
+
+                    <TextView
+                        android:id="@+id/txtShareWhatsApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Download"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/frameShareOther"
+                android:layout_width="@dimen/_130sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/client_share_other"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/llDownload"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sp"
+                    android:layout_height="@dimen/_20sp"
+                    android:src="@drawable/iv_share" />
+
+                <TextView
+                    android:id="@+id/txtOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_4sp"
+                    android:fontFamily="@font/medium"
+                    android:text="Share"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sp" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_back"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sp"
+        android:layout_marginTop="@dimen/_25sp"
+        android:layout_marginEnd="@dimen/_20sp"
+        android:layout_marginBottom="@dimen/_10sp"
+        android:fontFamily="@font/normal"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_3sp"
+
+        android:text="Your Commission will be sent to {UPI or Account number}. Note that this setting can not be changed once saved. "
+        android:textColor="#1D3667"
+        android:textSize="@dimen/_13sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sp"
+        android:layout_marginBottom="@dimen/_25sp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="@dimen/_90sp"
+            android:layout_height="@dimen/_45sp"
+
+            android:background="@drawable/login_button"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sp" />
+
+        <View
+            android:layout_width="@dimen/_30sp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="@dimen/_90sp"
+            android:layout_height="@dimen/_45sp"
+
+            android:background="@drawable/green_button"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Confirm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sp" />
+
+
+    </LinearLayout>
+</LinearLayout>

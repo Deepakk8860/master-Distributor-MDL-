@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sp"
+        android:background="@drawable/background_preferred_msg_profin"
+        android:elevation="1dp"
+        android:layout_marginHorizontal="@dimen/_10sp"
+        android:paddingStart="@dimen/_8sp"
+        android:paddingTop="@dimen/_14sp"
+        android:paddingBottom="@dimen/_14sp">
+
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="@dimen/_25sp"
+            android:layout_height="@dimen/_25sp"
+            android:buttonTint="@color/Gray_666"
+            android:checked="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtPreferredMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sp"
+            android:fontFamily="@font/medium"
+            android:lineSpacingExtra="@dimen/_2sp"
+            android:text=""
+            android:textColor="@color/Black_333"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/checkBox"
+            app:layout_constraintTop_toTopOf="@+id/checkBox" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

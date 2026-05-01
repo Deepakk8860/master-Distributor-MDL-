@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.SupportModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingTop="@dimen/_15sp"
+
+            android:paddingBottom="@dimen/_60sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+                android:fontFamily="@font/medium"
+                android:text="Create New Ticket"
+                android:textColor="@color/white"
+
+                android:textSize="@dimen/_16sp" />
+        </LinearLayout>
+
+        <com.android.masterdistributormdl.gskDistributor.utils.CornorNestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_minus30sp"
+            app:backgroundColor="#FFFFFF"
+            app:radiusTopLeft="@dimen/_30sp"
+            app:radiusTopRight="@dimen/_30sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical"
+                android:padding="@dimen/_20sp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/typeInputLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Ticket Type"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords|textMultiLine"
+
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_45sp"
+
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|end"
+                        android:layout_marginBottom="@dimen/_5sp"
+                        android:gravity="center"
+                        android:paddingEnd="@dimen/_10sp">
+
+                        <View
+                            android:layout_width="@dimen/_1sp"
+                            android:layout_height="@dimen/_15sp"
+                            android:background="#331D3667" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_18sp"
+                            android:layout_height="@dimen/_18sp"
+                            android:layout_marginStart="@dimen/_5sp"
+                            android:src="@drawable/drop_down" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sp"
+                        android:layout_gravity="center"
+                        android:background="@color/trans"
+                        android:visibility="invisible" />
+                </FrameLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/subjectInputLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/subject"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+                        android:hint="Ticket Subject"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapSentences"
+
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+                        android:textColor="#1D3667"
+                        android:textCursorDrawable="@drawable/color_cursor"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/descriptionInputLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:gravity="start"
+                            android:hint="Ticket Description"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapSentences|textMultiLine"
+                            android:maxHeight="@dimen/_110sp"
+
+                            android:maxLength="500"
+                            android:minHeight="@dimen/_90sp"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+
+                            android:textSize="@dimen/_12sp" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/wordCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginEnd="@dimen/_8sp"
+                        android:layout_marginBottom="@dimen/_22sp"
+                        android:text="0/500"
+                        android:textColor="#801D3667"
+                        android:textSize="@dimen/_10sp" />
+
+                </FrameLayout>
+
+
+                <com.google.android.material.card.MaterialCardView
+
+                    android:id="@+id/imageLay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:layout_marginTop="@dimen/_8sp"
+
+                    android:layout_marginBottom="@dimen/_17sp"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10sp"
+                    app:cardElevation="@dimen/_3sp"
+                    app:strokeColor="#4DECECEC"
+                    app:strokeWidth="@dimen/_1sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image"
+                        android:layout_width="@dimen/_100sp"
+                        android:layout_height="@dimen/_100sp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/close"
+                        android:layout_width="@dimen/_20sp"
+                        android:layout_height="@dimen/_20sp"
+                        android:layout_gravity="end"
+                        android:layout_margin="@dimen/_5sp"
+                        android:src="@drawable/close" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/attachment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dash_line"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_20sp"
+                        android:layout_height="@dimen/_20sp"
+                        android:src="@drawable/upload_attechment" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Attachment"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sp"
+                        android:gravity="center"
+                        android:text="You can only upload one image at a time."
+                        android:textColor="#801D3667"
+                        android:textSize="@dimen/_11sp" />
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/save"
+                    style="@style/button"
+                    android:layout_marginTop="@dimen/_17sp"
+                    android:layout_marginBottom="@dimen/_5sp"
+                    android:text="Submit" />
+
+
+            </LinearLayout>
+
+        </com.android.masterdistributormdl.gskDistributor.utils.CornorNestedScrollView>
+
+
+    </LinearLayout>
+</layout>

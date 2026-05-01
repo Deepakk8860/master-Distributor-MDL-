@@ -1,0 +1,436 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.onboarding.OnboardModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+
+                    android:fontFamily="@font/medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Aadhaar Card"
+                    android:textColor="#1D3667"
+
+                    android:textSize="@dimen/_16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+
+                    android:fontFamily="@font/normal"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Aadhaar Card Image - Front Side"
+                    android:textColor="#801D3667"
+
+                    android:textSize="@dimen/_12sp" />
+
+                <LinearLayout
+                    android:id="@+id/selectFrontImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:background="@drawable/dash_line2"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_20sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sp"
+                        android:layout_height="@dimen/_20sp"
+                        android:src="@drawable/upload_attechment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sp"
+
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Aadhaar Card Front Side"
+                        android:textColor="#1D3667"
+
+                        android:textSize="@dimen/_14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sp"
+
+                        android:fontFamily="@font/normal"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Upload Front Side of your Aadhaar Card."
+                        android:textColor="#801D3667"
+
+                        android:textSize="@dimen/_11sp" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/frontImageLay"
+                    android:layout_width="@dimen/_170sp"
+                    android:layout_height="@dimen/_100sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_7sp"
+                    app:cardElevation="0sp">
+
+                    <ImageView
+                        android:id="@+id/frontImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/banner" />
+
+                    <ImageView
+                        android:id="@+id/frontClose"
+                        android:layout_width="@dimen/_15sp"
+                        android:layout_height="@dimen/_15sp"
+                        android:layout_gravity="end"
+                        android:layout_margin="@dimen/_5sp"
+                        android:src="@drawable/close" />
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/aadharNoLay"
+      style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAadharNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="12345 67890"
+                        android:fontFamily="@font/normal"
+                        android:hint="Aadhaar Card Number*"
+                        android:inputType="number"
+                        android:maxLength="14"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RadioGroup
+                    android:id="@+id/genderRG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sp"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Gender* :"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/maleRB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#F86202"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+
+                        android:text="Male"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_13sp" />
+
+                    <RadioButton
+                        android:id="@+id/femaleRB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:buttonTint="#1D3667"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+                        android:minWidth="@dimen/_100sp"
+                        android:text="Female"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_13sp" />
+
+                </RadioGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sp"
+                    android:layout_marginTop="@dimen/_10sp"
+                    android:background="#F0EFEF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sp"
+
+                    android:fontFamily="@font/normal"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Aadhaar Card Image - Back Side"
+                    android:textColor="#801D3667"
+
+                    android:textSize="@dimen/_12sp" />
+
+                <LinearLayout
+                    android:id="@+id/selectBackImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:background="@drawable/dash_line2"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_20sp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sp"
+                        android:layout_height="@dimen/_20sp"
+                        android:src="@drawable/upload_attechment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sp"
+
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Aadhaar Card Back Side"
+                        android:textColor="#1D3667"
+
+                        android:textSize="@dimen/_14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sp"
+
+                        android:fontFamily="@font/normal"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Upload Back Side of your Aadhaar Card"
+                        android:textColor="#801D3667"
+
+                        android:textSize="@dimen/_11sp" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/backImageLay"
+                    android:layout_width="@dimen/_170sp"
+                    android:layout_height="@dimen/_100sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_7sp"
+                    app:cardElevation="0sp">
+
+                    <ImageView
+                        android:id="@+id/backImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/banner" />
+
+                    <ImageView
+                        android:id="@+id/backClose"
+                        android:layout_width="@dimen/_15sp"
+                        android:layout_height="@dimen/_15sp"
+                        android:layout_gravity="end"
+                        android:layout_margin="@dimen/_5sp"
+                        android:src="@drawable/close" />
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/addLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+                        android:hint="Address*"
+                        android:inputType="textCapWords"
+                        android:maxLength="60"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cityLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+                        android:hint="City*"
+                        android:inputType="textCapWords"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+                        android:textColor="#1D3667"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/stateLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Select State*"
+                            android:inputType="textCapWords"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/_27sp"
+                        android:layout_height="@dimen/_22sp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/_15sp"
+                        android:layout_marginEnd="@dimen/_10sp"
+                        android:src="@drawable/stage_down" />
+
+                </FrameLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pincodeLay"
+                    style="@style/OutlinedBoxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/normal"
+
+                        android:hint="Pin Code*"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:paddingStart="@dimen/_15sp"
+                        android:paddingEnd="@dimen/_15sp"
+                        android:singleLine="true"
+
+                        android:textColor="#152B57"
+                        android:textCursorDrawable="@drawable/color_cursor"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout   android:id="@+id/bottomLay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sp">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#25233C"
+                android:fontFamily="@font/bold"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F86202"
+                android:fontFamily="@font/bold"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

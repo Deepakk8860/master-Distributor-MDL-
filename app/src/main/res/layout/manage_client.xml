@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.home.HomeModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <!-- Header -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sp"
+                android:background="@color/white"
+                android:elevation="@dimen/_3sp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="@dimen/_8sp"
+                    android:src="@drawable/baseline_arrow_back_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="All Leads"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backButton"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFilterLead"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="@dimen/_12sp"
+                    android:visibility="invisible"
+                    android:src="@drawable/iv_filter_lead"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constToolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F8FF"
+                    android:paddingTop="@dimen/_16sp"
+                    android:paddingHorizontal="@dimen/_10sp">
+
+                    <HorizontalScrollView
+                        android:id="@+id/scrollTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:scrollbars="none"
+                        app:layout_constraintTop_toTopOf="parent"
+                        >
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:id="@+id/relLeads"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_40sp"
+                                android:background="@drawable/bg_toggle_selected"
+                                android:paddingHorizontal="@dimen/_12sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:elevation="2dp"
+                                    android:orientation="horizontal">
+
+                                    <!-- Left Text: NEW -->
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/txtLeadStatus"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_6sp"
+                                        android:layout_marginEnd="3dp"
+                                        android:text="All Leads"
+                                        android:textColor="#8000D8"
+                                        android:textSize="12sp"
+
+                                        />
+
+                                    <!-- Right Pill: 0 -->
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_arrow_down" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/relStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_40sp"
+                                android:layout_marginStart="@dimen/_10sp"
+                                android:background="@drawable/bg_toggle_unselected"
+                                android:paddingHorizontal="@dimen/_16sp"
+                                app:layout_constraintStart_toEndOf="@+id/relLeads"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:elevation="2dp"
+                                    android:orientation="horizontal">
+
+                                    <!-- Left Text: NEW -->
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/txtStatus"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="3dp"
+                                        android:text="Status"
+                                        android:textColor="#000000"
+                                        android:textSize="12sp" />
+
+                                    <!-- Right Pill: 0 -->
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivDropStatus"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_arrow_down_black" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtClearFilter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_10sp"
+                                android:text="Clear Filter"
+                                android:textColor="#8000D8"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/relStatus"
+                                app:layout_constraintStart_toEndOf="@+id/relStatus"
+                                app:layout_constraintTop_toTopOf="@+id/relStatus"
+
+                                />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </HorizontalScrollView>
+
+
+
+                    <HorizontalScrollView
+                        android:id="@+id/scrollBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sp"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/scrollTop">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <RelativeLayout
+                                android:id="@+id/relNew"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_40sp"
+                                android:paddingHorizontal="@dimen/_10sp"
+                                android:background="@drawable/bg_toggle_unselected">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:elevation="2dp"
+                                    android:orientation="horizontal">
+
+                                    <!-- Left Text: NEW -->
+                                    <TextView
+                                        android:id="@+id/tvNew"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="NEW"
+                                        android:textColor="#000000"
+                                        android:textSize="13sp" />
+
+                                    <!-- Right Pill: 0 -->
+                                    <TextView
+                                        android:id="@+id/tvCount"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:background="@drawable/text_background_unselected"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="#8000D8"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/relToday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_40sp"
+                                android:layout_marginStart="@dimen/_5sp"
+                                android:paddingHorizontal="@dimen/_10sp"
+                                android:background="@drawable/bg_toggle_unselected">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:elevation="2dp"
+                                    android:orientation="horizontal">
+
+                                    <!-- Left Text: NEW -->
+                                    <TextView
+                                        android:id="@+id/tvToday"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="Today"
+                                        android:textColor="#000000"
+                                        android:textSize="13sp" />
+
+                                    <!-- Right Pill: 0 -->
+                                    <TextView
+                                        android:id="@+id/tvTodayCount"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:background="@drawable/text_background_unselected"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="#8000D8"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/relCurrentMonth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_40sp"
+                                android:layout_marginStart="@dimen/_5sp"
+                                android:paddingHorizontal="@dimen/_10sp"
+                                android:background="@drawable/bg_toggle_unselected">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:elevation="2dp"
+                                    android:orientation="horizontal">
+
+                                    <!-- Left Text: NEW -->
+                                    <TextView
+                                        android:id="@+id/tvCurrentMonth"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="4dp"
+                                        android:textColor="#000000"
+                                        android:textSize="13sp" />
+
+                                    <!-- Right Pill: 0 -->
+                                    <TextView
+                                        android:id="@+id/tvCurrentMonthCount"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:background="@drawable/text_background_unselected"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="#8000D8"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/relLastMonth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_40sp"
+                                android:layout_marginStart="@dimen/_5sp"
+                                android:paddingHorizontal="@dimen/_10sp"
+                                android:background="@drawable/bg_toggle_unselected">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginHorizontal="@dimen/_6sp"
+                                    android:elevation="2dp"
+                                    android:orientation="horizontal">
+
+                                    <!-- Left Text: NEW -->
+                                    <TextView
+                                        android:id="@+id/tvLastMonth"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="Last Month"
+                                        android:textColor="#000000"
+                                        android:textSize="12sp" />
+
+                                    <!-- Right Pill: 0 -->
+                                    <TextView
+                                        android:id="@+id/tvLastMonthCount"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:background="@drawable/text_background_unselected"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="#8000D8"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </HorizontalScrollView>
+
+
+                    <!-- Yay Message -->
+                    <TextView
+                        android:id="@+id/tvMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/scrollBar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <!-- RecyclerView Timeline -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recClient"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sp"
+                android:layout_marginBottom="@dimen/_25sp"
+                android:adapter="@{model.clientAdapter}"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llFilter"
+                tools:listitem="@layout/manage_client_adapter" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNoDataFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="No Leads Found"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constToolbar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

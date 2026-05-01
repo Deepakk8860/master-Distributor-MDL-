@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.home.ConsultantDetailModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:id="@+id/topLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingTop="@dimen/_15sp"
+
+            android:paddingBottom="@dimen/_50sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+                android:fontFamily="@font/medium"
+                android:text="Help"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sp" />
+        </LinearLayout>
+
+        <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_minus30sp"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sp"
+            app:backgroundColor="#F0EEEF"
+            app:radiusTopLeft="@dimen/_30sp"
+            app:radiusTopRight="@dimen/_30sp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvConsultant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        app:cardElevation="@dimen/_3sp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:layout_width="match_parent"
+                            android:background="@color/white"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Consultant"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="#F86202"
+                                android:paddingBottom="8dp" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Name :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtConsutantName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Email :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtConsutantEmail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Mobile :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtConsutantMobile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="@dimen/_15sp"
+                                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                                app:cardBackgroundColor="#F86202"
+                                app:cardCornerRadius="@dimen/_30sp"
+                                app:cardElevation="0sp"
+                                app:strokeColor="#F86202"
+                                app:strokeWidth="@dimen/_1sp">
+
+                                <TextView
+                                    android:id="@+id/addContactConsultant"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sp"
+                                    android:layout_marginTop="@dimen/_3sp"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Add to Contacts"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13sp" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+                    <!-- Manager Section (3 cards) -->
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvManager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        android:layout_marginTop="@dimen/_8sp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardElevation="@dimen/_3sp"
+                        >
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:layout_width="match_parent"
+                            android:background="@color/white"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Manager"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="#F86202"
+                                android:paddingBottom="8dp" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Name :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtManagerName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Email :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtManagerEmail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Mobile :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtManagerMobile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="@dimen/_15sp"
+                                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                                app:cardBackgroundColor="#F86202"
+                                app:cardCornerRadius="@dimen/_30sp"
+                                app:cardElevation="0sp"
+                                app:strokeColor="#F86202"
+                                app:strokeWidth="@dimen/_1sp">
+
+                                <TextView
+                                    android:id="@+id/addContactManager"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sp"
+                                    android:layout_marginTop="@dimen/_3sp"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Add to Contacts"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13sp" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvTrainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        android:layout_marginTop="@dimen/_8sp"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        app:cardElevation="@dimen/_3sp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:layout_width="match_parent"
+                            android:background="@color/white"
+                            android:layout_height="wrap_content">
+
+                            <!-- Agent Section (2 cards) -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Trainer"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="#F86202"
+                                android:paddingBottom="8dp" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Name :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtAgentName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Email :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtAgentEmail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Mobile :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtAgentMobile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="@dimen/_15sp"
+                                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                                app:cardBackgroundColor="#F86202"
+                                app:cardCornerRadius="@dimen/_30sp"
+                                app:cardElevation="0sp"
+                                app:strokeColor="#F86202"
+                                app:strokeWidth="@dimen/_1sp">
+
+                                <TextView
+                                    android:id="@+id/addContactTrainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sp"
+                                    android:layout_marginTop="@dimen/_3sp"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Add to Contacts"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13sp" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Escalation Manager -->
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvEscalation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        card_view:cardCornerRadius="12dp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                        app:cardBackgroundColor="#F0EEEF"
+                        app:cardCornerRadius="@dimen/_10sp"
+                        android:layout_marginTop="@dimen/_8sp"
+                        app:cardElevation="@dimen/_3sp"
+                      >
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:layout_width="match_parent"
+                            android:background="@color/white"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Escalation Manager"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="#F86202"
+                                android:paddingBottom="8dp" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Name :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtEscalationName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Email :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtEscalationEmail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/normal"
+                                    android:text="Mobile :"
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                                <TextView
+                                    android:id="@+id/txtEscalationMobile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/medium"
+                                    android:text=""
+                                    android:textColor="#1B2F56"
+                                    android:textSize="@dimen/_12sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="@dimen/_15sp"
+                                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                                app:cardBackgroundColor="#F86202"
+                                app:cardCornerRadius="@dimen/_30sp"
+                                app:cardElevation="0sp"
+                                app:strokeColor="#F86202"
+                                app:strokeWidth="@dimen/_1sp">
+
+                                <TextView
+                                    android:id="@+id/addContactEscalation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sp"
+                                    android:layout_marginTop="@dimen/_3sp"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Add to Contacts"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13sp" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+
+
+        </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+
+    </LinearLayout>
+</layout>

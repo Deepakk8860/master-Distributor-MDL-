@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/seletedDown"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fontFamily="@font/normal"
+    android:gravity="center|start"
+    android:paddingStart="@dimen/_10sp"
+    android:paddingTop="@dimen/_5sp"
+    android:paddingEnd="@dimen/_5sp"
+    android:paddingBottom="@dimen/_5sp"
+    android:text="Active"
+    android:textColor="#1D3667"
+    android:textSize="@dimen/_13sp" />

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sp"
+        android:layout_marginTop="@dimen/_8sp"
+        android:layout_marginEnd="@dimen/_20sp"
+        android:layout_marginBottom="@dimen/_8sp"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_25sp"
+        app:cardElevation="0sp"
+        app:strokeColor="#4D1D3667"
+        app:strokeWidth="@dimen/_1sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4DFFF9F3"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_20sp"
+                android:paddingTop="@dimen/_17sp"
+                android:paddingEnd="@dimen/_18sp"
+                android:paddingBottom="@dimen/_17sp">
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/bold"
+                    android:includeFontPadding="false"
+
+
+                    android:text="App related issue"
+                    android:textColor="#1D3667"
+
+                    android:textSize="@dimen/_15sp" />
+
+                <TextView
+                    android:id="@+id/subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp"
+                    android:fontFamily="@font/medium"
+                    android:includeFontPadding="false"
+                    android:text="Subject: App issue comming many times"
+                    android:textColor="#B31D3667"
+
+                    android:textSize="@dimen/_12sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sp"
+                android:background="#4D1D3667" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FCFCFC"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_20sp"
+                android:paddingTop="@dimen/_15sp"
+                android:paddingEnd="@dimen/_20sp"
+                android:paddingBottom="@dimen/_15sp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+
+                        android:text="Created  Date"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+
+                        android:text="1 Nov 2022"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+
+                        android:text="Ticket ID"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/ticketId"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/medium"
+                        android:text="500"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/earnType"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+
+                        android:text="Status"
+                        android:textColor="#1B2F56"
+
+                        android:textSize="@dimen/_12sp" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:text="100"
+                        android:textColor="#F86202"
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sp"
+                android:background="#4D1D3667" />
+
+            <LinearLayout
+                android:id="@+id/viewDetails"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sp"
+                android:background="#FCFCFC"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+
+                    android:text="View Details"
+                    android:textColor="#F86202"
+
+                    android:textSize="@dimen/_13sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sp"
+                    android:layout_height="@dimen/_15sp"
+                    android:layout_marginStart="@dimen/_8sp"
+                    android:src="@drawable/arrow_right_orange" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

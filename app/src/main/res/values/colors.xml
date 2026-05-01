@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#25233C</color>
+    <color name="colorPrimaryDark">#25233C</color>
+    <color name="colorAccent">#494859</color>
+    <color name="app_color">#25233C</color>
+    <color name="editor_controller_bg">#F4F4F4</color>
+    <color name="white">#ffffff</color>
+    <color name="textColor">#000000</color>
+    <color name="button_second">#1A2196F3</color>
+    <color name="trans">#00ffffff</color>
+    <color name="green">#3DD179</color>
+    <!--    <color name="red">#FF532F</color>-->
+    <color name="red">#EC1C24</color>
+    <color name="active_color">#F86202</color>
+    <color name="shimmer_color">#CCCAC9C9</color>
+    <color name="Black_333">#333333</color>
+    <color name="grey_dark">#CCCCCC</color>
+    <color name="strokecolor">#C2C5CC</color>
+    <color name="Gray_666">#666666</color>
+    <color name="blue_light">#195BA5</color>
+    <color name="switch_on_thumb_color">#4CAF50</color> <!-- Green color for thumb when checked -->
+    <color name="switch_off_thumb_color">#E7E9EB
+    </color> <!-- Grey color for thumb when unchecked -->
+    <color name="switch_on_track_color">#A5D6A7
+    </color> <!-- Light green color for track when checked -->
+    <color name="switch_off_track_color">#BABDBF
+    </color> <!-- Light grey color for track when unchecked -->
+
+
+    <color name="black">#000000</color>
+    <color name="buttonColor">#999999</color>
+    <color name="Gray_light">#F8F8FA</color>
+    <color name="Red">#EC1C24</color>
+    <color name="Gray_999">#999999</color>
+    <color name="light_red">#FEF4F4</color>
+    <color name="blue">#00336A</color>
+    <color name="grey_light_2">#F2EDED</color>
+    <color name="Dropdown_color">#FCDEDF</color>
+    <color name="black_11">#111111</color>
+    <color name="view_color">#D9D9D9</color>
+
+
+
+    <color name="active_state_submit_button">#002E6E</color>
+    <color name="back_net_banking">#f3f7f8</color>
+    <color name="black_222222">#222222</color>
+    <color name="blue_00ade6">#00ade6</color>
+    <color name="bright_sky_color">#00b9f5</color>
+    <color name="color_00b9f5">#00baf2</color>
+    <color name="dummy">#00000000</color>
+    <color name="gray_444444">#444444</color>
+    <color name="gray_666666">#666666</color>
+    <color name="gray_686868">#686868</color>
+    <color name="gray_8ba6c1">#8ba6c1</color>
+    <color name="inActive_state_submit_button">#9B9B9B</color>
+    <color name="light_gray_a9a9a9">#a9a9a9</color>
+    <color name="none">#00000000</color>
+    <color name="paytm_blue">#00baf2</color>
+    <color name="paytm_dark_blue">#012b72</color>
+    <color name="submit_easy_pay">#00b9f5</color>
+    <color name="theme_color_dark">#002e6e</color>
+    <color name="white_b8c2cb">#b8c2cb</color>
+    <color name="white_eceff1">#eceff1</color>
+    <color name="white_smoke">#F5F5F5</color>
+
+
+
+    <color name="graydark">#002942</color>
+    <color name="greendark">#299856</color>
+    <color name="hint">#4DA8C6D8</color>
+    <color name="gray">#416175</color>
+    <color name="graylight">#6D8C9F</color>
+    <color name="shadowlayout_dark_background">#FF424242</color>
+    <color name="shadowlayout_light_background">#FFFFFFFF</color>
+    <color name="cardview_dark_background">#FF424242</color>
+    <color name="cardview_light_background">#FFFFFFFF</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+
+</resources>

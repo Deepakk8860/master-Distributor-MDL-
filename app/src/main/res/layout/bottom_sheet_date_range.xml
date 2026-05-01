@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:paddingTop="16dp">
+
+    <!-- Close Icon (floating) -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/iv_close"
+        android:layout_gravity="start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Bottom Sheet Card -->
+    <LinearLayout
+        android:id="@+id/bottomSheetContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:layout_marginTop="34dp"
+        android:elevation="8dp"
+        android:clipToPadding="false"
+        android:backgroundTint="#FFFFFF">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date Range Options"
+            android:background="#F6F3F3"
+            android:textColor="#666666"
+            android:paddingVertical="@dimen/_14sp"
+            android:textSize="16sp"
+            android:paddingStart="@dimen/_16sp"
+            android:fontFamily="@font/normal"
+             />
+
+        <!-- Option 1 -->
+        <TextView
+            android:id="@+id/tvPast7Days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/past_7_days"
+            android:fontFamily="@font/medium"
+            android:textColor="#01579B"
+            android:paddingStart="@dimen/_16sp"
+            android:textSize="16sp"
+            android:drawablePadding="8dp"
+            android:paddingVertical="12dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/_3sp"
+            android:background="#F0EBEB"/>
+
+        <!-- Option 2 -->
+        <TextView
+            android:id="@+id/tvPast24Hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/past_24_hours"
+            android:fontFamily="@font/medium"
+            android:paddingStart="@dimen/_16sp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:paddingVertical="12dp" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_back"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sp">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="@dimen/_20sp"
+        android:layout_height="@dimen/_20sp"
+        android:layout_gravity="end"
+        android:src="@drawable/close" />
+    <ImageView
+
+        android:layout_width="@dimen/_100sp"
+        android:layout_height="@dimen/_100sp"
+        android:layout_gravity="center"
+         />
+
+    <TextView
+android:layout_marginTop="@dimen/_15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+
+        android:text="Turn on notifications?"
+        android:textColor="#25233C"
+
+        android:textSize="@dimen/_16sp" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sp"
+        android:fontFamily="@font/normal"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_3sp"
+        android:text="Please enable push notifications to receive updates on your orders."
+        android:textColor="#E625233C"
+
+        android:textSize="@dimen/_13sp" />
+
+    <Button
+        android:id="@+id/allow"
+        style="@style/button"
+        android:layout_width="@dimen/_160sp"
+        android:layout_height="@dimen/_45sp"
+        android:layout_marginTop="@dimen/_15sp"
+        android:layout_marginBottom="@dimen/_15sp"
+
+        android:text="Allow Notifications"
+        android:textSize="@dimen/_13sp" />
+
+</LinearLayout>

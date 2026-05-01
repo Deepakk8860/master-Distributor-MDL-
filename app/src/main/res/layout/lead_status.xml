@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.home.HomeModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_3sp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/backButton"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="@dimen/_8sp"
+                        android:src="@drawable/baseline_arrow_back_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Client Name -->
+                <TextView
+                    android:id="@+id/txtDisplayName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sp"
+                    android:layout_marginTop="@dimen/_15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sp"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCall"
+                        android:layout_width="@dimen/_40sp"
+                        android:layout_height="@dimen/_40sp"
+                        android:src="@drawable/iv_call_mfl" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMessage"
+                        android:layout_width="@dimen/_40sp"
+                        android:layout_height="@dimen/_40sp"
+                        android:layout_marginStart="@dimen/_18sp"
+                        android:src="@drawable/iv_message_mfl" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivEmail"
+                        android:layout_width="@dimen/_40sp"
+                        android:layout_height="@dimen/_40sp"
+                        android:layout_marginStart="@dimen/_18sp"
+                        android:src="@drawable/iv_email_mfl" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivWhatsApp"
+                        android:layout_width="@dimen/_40sp"
+                        android:layout_height="@dimen/_40sp"
+                        android:layout_marginStart="@dimen/_18sp"
+                        android:src="@drawable/iv_whatsapp_mfl" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLeadShare"
+                        android:layout_width="@dimen/_40sp"
+                        android:layout_height="@dimen/_40sp"
+                        android:layout_marginStart="@dimen/_18sp"
+                        android:src="@drawable/iv_share_lead" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPaymentLink"
+                        android:layout_width="@dimen/_40sp"
+                        android:layout_height="@dimen/_40sp"
+                        android:layout_marginStart="@dimen/_18sp"
+                        android:src="@drawable/payment_link" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp">
+                    <!-- Client Name -->
+                    <TextView
+                        android:id="@+id/txtFollowUpStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_25sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/follow_up"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/relFollowUpDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_9sp"
+                        android:background="@drawable/edit_text_bg_mdl">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtFollowsUpDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginEnd="@dimen/_6sp"
+                            android:layout_toEndOf="@+id/txtFollowUpTime"
+                            android:focusable="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="No follow up schedule"
+                            android:inputType="textPersonName"
+                            android:padding="12dp"
+                            android:textColor="@color/blue"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtFollowUpTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:focusable="false"
+                            android:fontFamily="@font/normal"
+                            android:inputType="textPersonName"
+                            android:padding="12dp"
+                            android:textColor="@color/blue"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <!-- Display Name -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtLeadStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/lead_stage"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:id="@+id/relLeadStage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_9sp"
+                        android:background="@drawable/edit_text_bg_mdl">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="@dimen/_10sp"
+                            android:visibility="gone" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtLeadStage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/ivIcon"
+                            android:focusable="false"
+                            android:fontFamily="@font/normal"
+                            android:hint="Select lead stage"
+                            android:padding="12dp"
+                            android:textSize="14sp" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="@dimen/_6sp"
+                            android:src="@drawable/baseline_keyboard_arrow_down_24" />
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp">
+
+                    <!-- Email Address -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/opportunity_size"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtOpportunity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_9sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:fontFamily="@font/normal"
+                        android:hint="@string/tap_to_enter_a_value"
+                        android:padding="12dp"
+                        android:textSize="14sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_12sp">
+
+                    <!-- Email Address -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Notes"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_9sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:fontFamily="@font/normal"
+                        android:hint="@string/add_notes_about_your_client_here"
+                        android:inputType="textMultiLine"
+                        android:lineSpacingExtra="@dimen/_2sp"
+                        android:padding="12dp"
+                        android:textSize="14sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTimeLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/_16sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/timeline"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/icon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/root_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_16sp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constAddActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <!-- Timeline Line -->
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="2dp"
+                            android:layout_height="@dimen/_50sp"
+                            android:layout_marginStart="28dp"
+                            android:background="#B8B3B3"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+                        <!-- Icon -->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/icon"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="0dp"
+                            android:src="@drawable/iv_plus_mfl"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <!-- Time -->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtAddActivity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Add Activity"
+                            android:textColor="#482687"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/icon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <!-- RecyclerView Timeline -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/timelineRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_25sp"
+                        android:adapter="@{model.timeLineAdapter}"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:scrollbars="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constAddActivity"
+                        tools:listitem="@layout/timeline_item" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</layout>

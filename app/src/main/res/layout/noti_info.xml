@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.NotiInfoModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sp"
+            android:paddingTop="@dimen/_15sp"
+
+            android:paddingBottom="@dimen/_10sp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+
+                android:fontFamily="@font/medium"
+
+
+                android:text="Notifications Details"
+                android:textColor="#1D3667"
+
+                android:textSize="@dimen/_16sp" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_20sp"
+                    android:paddingTop="@dimen/_10sp"
+                    android:paddingEnd="@dimen/_20sp">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/medium"
+
+                        android:text="Mobile-Inspired Customer"
+                        android:textColor="#1D3667"
+                        android:textSize="@dimen/_14sp" />
+
+                    <TextView
+                        android:id="@+id/body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sp"
+                        android:fontFamily="@font/normal"
+                        android:text="Request a Call Back. Our mobile app expert team will contact you as soon as possible."
+                        android:textColor="#991B2F56"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/_7sp"
+                        android:fontFamily="@font/normal"
+                        android:text="20 Sep 2022 12:34 Am"
+                        android:textColor="#801D3667"
+                        android:textSize="@dimen/_10sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+
+</layout>

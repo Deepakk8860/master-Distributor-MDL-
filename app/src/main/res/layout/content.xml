@@ -1,0 +1,92 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.masterdistributormdl.gskDistributor.view.ContentModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_100sp"
+            android:background="#FFF9F3" />
+
+        <LinearLayout
+            android:id="@+id/headerLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sp"
+            android:paddingTop="@dimen/_15sp"
+            android:paddingEnd="@dimen/_25sp"
+            android:paddingBottom="@dimen/_25sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:layout_marginStart="@dimen/_7sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10sp"
+                android:fontFamily="@font/bold"
+                android:textColor="#132D5F"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/headerLay">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/headerLay"
+                android:fillViewport="true">
+
+                <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:backgroundColor="#FFFF"
+                    app:radiusTopLeft="@dimen/_30sp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_25sp" />
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sp"
+                        android:layout_marginEnd="@dimen/_10sp" />
+                </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </RelativeLayout>
+</layout>
+

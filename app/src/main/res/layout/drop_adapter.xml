@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/clik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_trans_button"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_10sp"
+        android:paddingTop="@dimen/_15sp"
+        android:gravity="center_vertical"
+        android:paddingEnd="@dimen/_10sp"
+        android:paddingBottom="@dimen/_15sp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:visibility="gone"
+            android:src="@drawable/iv_call_mfl"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:text="Demo"
+            android:layout_marginStart="@dimen/_10sp"
+            android:textColor="#25233C"
+            android:textSize="@dimen/_12sp" />
+    </LinearLayout>
+</layout>

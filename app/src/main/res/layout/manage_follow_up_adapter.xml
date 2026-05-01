@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_6sp"
+        android:paddingVertical="@dimen/_7sp"
+       android:background="@drawable/background_client"
+        android:layout_marginBottom="@dimen/_6sp"
+        android:layout_marginTop="@dimen/_6sp"
+        >
+
+        <TextView
+            android:id="@+id/logoTxt"
+            android:layout_width="@dimen/_40sp"
+            android:layout_height="@dimen/_40sp"
+            android:background="@drawable/circle_shape"
+            android:fontFamily="@font/bold"
+            android:gravity="center_vertical|center_horizontal"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Deepak kumar"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/logoTxt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/normal"
+            android:layout_marginHorizontal="@dimen/_6sp"
+            android:textColor="#F86202"
+            android:textAlignment="textStart"
+            app:layout_constraintTop_toTopOf="@+id/nameTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text=""
+            android:paddingBottom="@dimen/_4sp"
+            android:textSize="@dimen/_12sp"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/normal"
+            android:text="Notes"
+            android:visibility="gone"
+            android:textColor="#757070"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintTop_toBottomOf="@+id/nameTxt"
+            app:layout_constraintStart_toStartOf="@+id/nameTxt"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/txtNotes"
+            app:layout_constraintStart_toStartOf="@+id/nameTxt"
+            android:orientation="horizontal">
+
+            <!-- Icon -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDesIcon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="@dimen/_6sp"
+                android:src="@drawable/iv_whatsapp_mfl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txtDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normal"
+                android:text="Assigned to you 16h ago"
+                android:textColor="#757070"
+                android:layout_marginEnd="@dimen/_6sp"
+                android:textSize="@dimen/_12sp"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/txtPincode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/normal"
+            android:textColor="#757070"
+            app:layout_constraintTop_toBottomOf="@+id/llDate"
+            app:layout_constraintStart_toStartOf="@+id/nameTxt"
+            android:textAlignment="textStart"
+            android:text=""
+            android:textSize="@dimen/_12sp"
+            />
+
+        <TextView
+            android:id="@+id/txtInvestmentSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/normal"
+            android:textColor="#757070"
+            app:layout_constraintTop_toBottomOf="@+id/txtPincode"
+            app:layout_constraintStart_toStartOf="@+id/nameTxt"
+            android:textAlignment="textStart"
+            android:text=""
+            android:paddingBottom="@dimen/_4sp"
+            android:textSize="@dimen/_12sp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

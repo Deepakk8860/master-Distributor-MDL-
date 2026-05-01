@@ -1,0 +1,179 @@
+<resources>
+    <string name="app_name">Master Distributor MDL</string>
+    <string name="internet_error">Make sure <font color='#DD1212'><b>WI-Fi</b> or <b>Cellular</b></font> data is turned on, then try again.</string>
+    <string name="submit">Submit</string>
+    <string name="ok">OK</string>
+    <string name="exlamatory">!</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="error">Error</string>
+    <string name="email_continue">Email not found for this client. Please update it to continue.</string>
+    <string name="select_your_preferred_message_for_sending">Select your preferred message \nfor sending</string>
+    <string name="something_wrong">Something Wrong</string>
+    <string name="try_again">Try Again</string>
+    <string name="please_wait">Please wait</string>
+    <string name="processing">Processing..</string>
+    <string name="resend_otp">Did\'t receive code?<u><font color='#34A853'> Resend Code</font></u></string>
+    <string name="no_internet">No Internet connection. Make sure WI-Fi or cellular data is turned on, then try again.</string>
+    <string name="close">Close</string>
+    <string name="sign_in_with_google">Sign In with Google</string>
+    <string name="code_sent_to">We sent a verification code to <b>easycodes8860@gmal.com</b> Enter the code below boxes</string>
+    <string name="need_help_chat_with_us">Need help? <u><b>Chat with us</b></u></string>
+    <string name="no_uncontacted_leads">NO UNCONTACTED LEADS</string>
+    <string name="invite_msg">Invite your teammates to MFL to assign them leads,share content, and track progress</string>
+    <string name="invite_team_members"><![CDATA[Invite Team Members >]]></string>
+    <string name="past_24_hours">Past 24 hours</string>
+    <string name="past_7_days">Past 7 days</string>
+    <string name="settings">Settings</string>
+    <string name="lead_forms">Lead Forms</string>
+    <string name="integrations">Integrations</string>
+    <string name="manage_team">Manage Team</string>
+    <string name="team_view">Team View</string>
+    <string name="customer_support">Customer Support</string>
+    <string name="user_guide">User Guide</string>
+    <string name="chat_with_us">Chat With Us</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="display_name_">Display name is what your clients will see</string>
+    <string name="client_name">NAME</string>
+    <string name="display_name">DISPLAY NAME</string>
+    <string name="mobile_number">MOBILE NUMBER</string>
+    <string name="_91">+91</string>
+    <string name="e_g_1234_5678">e.g. 1234 5678</string>
+    <string name="whatsapp_number">WHATSAPP NUMBER</string>
+    <string name="e_g_example_gmail_com">e.g. example@gmail.com</string>
+    <string name="e_g_example_pincode">e.g. 203402</string>
+    <string name="email_address">EMAIL ADDRESS</string>
+    <string name="e_g_katherine_lim">e.g. Katherine Lim</string>
+    <string name="notes">NOTES</string>
+    <string name="add_notes_about_your_client_here">Add notes about your client here…</string>
+    <string name="save">SAVE</string>
+    <string name="add_new_client">Add New Lead</string>
+    <string name="pincode">PINCODE</string>
+    <string name="e_g_katherine">e.g. Katherine</string>
+    <string name="follow_up">FOLLOW UP</string>
+    <string name="enter_opportunity_size">Enter Opportunity Size</string>
+    <string name="symbol">₹</string>
+    <string name="lead_stage">LEAD STAGE</string>
+    <string name="tap_to_enter_a_value">Tap to enter a value...</string>
+    <string name="opportunity_size">Opportunity Size</string>
+    <string name="select_lead_stage">Select Lead Stage</string>
+    <string name="mobile_number_is_required">Mobile number is required*</string>
+    <string name="pincode_is_required">Pincode is required*</string>
+    <string name="please_enter_valid_mobile_number">Please enter valid mobile number</string>
+    <string name="please_enter_valid_pincode">Please enter valid pincode</string>
+    <string name="timeline">TIMELINE</string>
+    <string name="add_optional_details_here">Add optional details here...</string>
+    <string name="add_activity">ADD ACTIVITY</string>
+    <string name="schedule_follow_up_for">Schedule follow up for</string>
+    <string name="add_activity_drop_down">Add Activity</string>
+    <string name="save_activity">SAVE ACTIVITY</string>
+    <string name="someday">SOMEDAY</string>
+    <string name="change_photo"><u>Change photo</u></string>
+    <string name="ic_rotate_left_24">Rotate counter clockwise</string>
+    <string name="ic_rotate_right_24">Rotate</string>
+    <string name="ic_flip_24">Flip</string>
+    <string name="enter_city">City <font color='#F86202'>*</font></string>
+    <string name="enter_state">State <font color='#F86202'>*</font></string>
+    <string name="enter_pin_code">Pin Code <font color='#F86202'>*</font></string>
+    <string name="ic_flip_24_horizontally">Flip Horizontally</string>
+    <string name="ic_flip_24_vertically">Flip Vertically</string>
+    <string name="log_out">Log Out</string>
+    <string name="enter_address">Address <font color='#F86202'>*</font></string>
+    <string name="save_activity2">Save Activity?</string>
+    <string name="enter_mobile_no">Mobile Number <font color='#F86202'>*</font></string>
+    <string name="enter_email">Email ID<font color='#F86202'>*</font></string>
+
+
+    <string name="new_lead_list">New Lead List</string>
+    <string name="system_given_new_leads">System Given Leads</string>
+    <string name="manually_added_new_leads">Manually Added New Leads</string>
+    <string name="lead_alert">Oops! You haven\'t worked on your previous leads. Please complete them before starting a new one.</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="push">Push:</string>
+    <string name="enter_name">Name<font color='#F86202'>*</font></string>
+
+
+
+
+    <string name="password_hint">★★★★★★★</string>
+    <string name="app_update_by_download">Updated version application is available, click on <b>Update</b> to upgrade now!</string>
+    <string name="app_update_by_play">Updated version application is available, click on <b>Update</b> to upgrade now!</string>
+    <string name="enter_mobile_email">Email<font color='#B31D3667'>/</font> Mobile</string>
+    <string name="add_user_alert">This Mobile Number is not registered with us. Register now to earn <b>₹2,00,000</b>+per year</string>
+    <string name="existing_user_log_in">Existing user? <font color='#34A853'> <b><u>Log in</u></b></font></string>
+    <string name="enter_contact_person">Name of Contact Person <font color='#F86202'>*</font></string>
+    <string name="enter_shop_name">Retailer Name<font color='#F86202'>*</font></string>
+    <string name="enter_gst_no">GST Number (If available)</string>
+    <string name="enter_city_village">City/Village <font color='#F86202'>*</font></string>
+    <string name="enter_district">District <font color='#F86202'>*</font></string>
+    <string name="enter_landmark">Landmark</string>
+    <string name="available_shop_25">Available Retailer <font color='#1D3667'><b>25</b></font></string>
+    <string name="view_more"><u>View More</u></string>
+    <string name="downloading">Downloading…</string>
+    <string name="title_file_download">APK is downloading</string>
+    <string name="storage_access_required">Storage access is required to downloading the file.</string>
+    <string name="storage_permission_denied">Storage permission request was denied.</string>
+    <string name="unblock_crm">Unblock CRM</string>
+    <string name="shop_quota_price">Starting at <font color='#F86202'><b>₹999</b></font> for <font color='#12BE40'><b>1</b></font> Retailer</string>
+    <string name="name">Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start_recording">Start Recording</string>
+    <string name="flip_camera">Flip Camera</string>
+    <string name="stop_recording">Stop Recording</string>
+    <string name="view_commission">View Commission</string>
+    <string name="micro_services">Refer to a separate sheet for details. Contact our executive to request it.</string>
+    <string name="promote_list">Promote List</string>
+    <string name="refer_list">Refer List</string>
+    <string name="support">Support</string>
+    <string name="support_ticket">Support Ticket</string>
+    <string name="visiting_card">Visiting Card</string>
+    <string name="trainings">Webinar</string>
+    <string name="training_videos">Webinar</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="webinar">Webinar</string>
+    <string name="trainings_video">Trainings Video</string>
+    <string name="fssai_amp_iso">FSSAI &amp; ISO</string>
+    <string name="registration">Registration</string>
+    <string name="itr">ITR</string>
+    <string name="company">Company</string>
+    <string name="accounting_balance_sheet">Accounting &amp; Balance Sheet</string>
+    <string name="dsc">DSC</string>
+    <string name="trademark">Trademark</string>
+    <string name="gst_returns">GST Returns</string>
+    <string name="gst_other_compliance">GST Other Compliance</string>
+    <string name="gst_registration">GST Registration</string>
+    <string name="compliances">Compliances</string>
+    <string name="self_retailer">Self Retailer</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="shop_name">Business Name :</string>
+    <string name="search_by_retailer_name">Search by Retailer Name</string>
+    <string name="earning_till_date">Earning Till Date :</string>
+    <string name="frequent_actions_user_profile">Frequent Actions &amp; User Profile</string>
+    <string name="marketing_promotions">Marketing &amp; Promotions</string>
+    <string name="engagement_support">Engagement &amp; Support</string>
+    <string name="legal_policies">Legal &amp; Policies</string>
+    <string name="settings_miscellaneous">Settings &amp; Miscellaneous</string>
+    <string name="enter_retailer_quota">Enter Retailer Quota</string>
+    <string name="or">or</string>
+    <string name="helpline_number">Help Line Number</string>
+    <string name="_0120_6860_788">0120 6860 788</string>
+    <string name="no_customer_record_found">No customer record found</string>
+    <string name="no_earning_record_found">No earning record found</string>
+    <string name="no_records_found">No retailers found</string>
+    <string name="no_references_found">No references found</string>
+    <string name="no_support_requests_found">No support requests found.</string>
+    <string name="processing_your_video_kyc_please_wait">Processing your Video KYC... Please wait.</string>
+    <string name="create_payment_link">Create Payment Link</string>
+    <string name="generate_payment_link">Generate Payment Link</string>
+    <string name="upload_share_on_your_pdf_documents">Upload,share on your PDF documents</string>
+    <string name="no_distributor_found">No distributor found</string>
+    <string name="state">State</string>
+    <string name="email">Email<font color='#F86202'>*</font></string>
+    <string name="thank_you_for_submitting_your_details">Thank you for submitting your Details.</string>
+    <string name="eligible_commission">Eligible Commission</string>
+    <string name="basic_Details_info">Your basic and address details are incomplete. By Clicking \'Next\' to complete them and access the dashboard.</string>
+    <string name="apply">APPLY</string>
+    <string name="micro_services2">Micro Services</string>
+
+
+</resources>

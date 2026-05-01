@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/dialog_background">
+
+    <!-- Header with Title and Close Icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_4sp"
+        android:layout_marginBottom="@dimen/_15sp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvFilterHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Filter by Status"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivCloseDialog"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close_otp"
+            android:contentDescription="Close Dialog"
+            />
+    </LinearLayout>
+
+    <!-- Checkboxes -->
+    <CheckBox
+        android:id="@+id/cbEarnings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Earning"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/cbProcessing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Processing"
+        android:layout_marginTop="@dimen/_6sp"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/cbNonEligible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Non Eligible"
+        android:layout_marginTop="@dimen/_6sp"
+        android:textSize="16sp" />
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:backgroundTint="#B4B5B6"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnApply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#F86202"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_20sp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_15sp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/back"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+            <TextView
+                android:id="@+id/toolbar_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_15sp"
+                android:fontFamily="@font/medium"
+                android:text="Your Link"
+                android:textColor="#D3CACA"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCopy"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="@dimen/_10sp"
+                android:src="@drawable/iv_copy_clipboard"
+                android:tint="@color/white" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/_3sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonLay"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/llDownload"
+                android:layout_width="@dimen/_130sp"
+                android:layout_height="@dimen/_35sp"
+                android:layout_marginStart="@dimen/_10sp"
+                android:background="@drawable/client_share_whatsapp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sp"
+                        android:layout_height="@dimen/_20sp"
+                        android:src="@drawable/download" />
+
+                    <TextView
+                        android:id="@+id/txtShareWhatsApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sp"
+                        android:fontFamily="@font/medium"
+                        android:text="Download"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/frameShareOther"
+                android:layout_width="@dimen/_130sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/client_share_other"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/llDownload"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sp"
+                    android:layout_height="@dimen/_20sp"
+                    android:src="@drawable/iv_share" />
+
+                <TextView
+                    android:id="@+id/txtOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_4sp"
+                    android:fontFamily="@font/medium"
+                    android:text="Share"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sp" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
