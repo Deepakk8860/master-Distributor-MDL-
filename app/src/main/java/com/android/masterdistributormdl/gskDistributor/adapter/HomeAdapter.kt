@@ -860,13 +860,46 @@ class HomeAdapter(val model: ViewModel, var viewType: Int) :
                 binding.status.text = "● " + "Deactivate"
                 binding.status.setTextColor2("#B31D3667")
             }
+
+            if (item.training_status) {
+                binding.trainingStatus.text = "Yes"
+                binding.infoIcon.visibility = View.GONE
+                binding.updateTraining.visibility = View.GONE
+            } else {
+                binding.trainingStatus.text = "No"
+                if (item.training_remark.isNotEmpty()){
+                    binding.infoIcon.visibility = View.VISIBLE
+                }
+
+
+                binding.updateTraining.visibility = View.VISIBLE
+            }
+
+            binding.infoIcon.setOnClickListener {
+                item.isInfoClick = true
+                item.isUpdateTrainingClick = false
+                item.countCustomer = false
+                clickListener?.invoke(item)
+            }
+
+            binding.updateTraining.setOnClickListener {
+                item.isInfoClick = false
+                item.isUpdateTrainingClick = true
+                item.countCustomer = false
+                clickListener?.invoke(item)
+            }
+
             binding.viewCertificate.setOnClickListener {
-                item.countCustomer=false
+                item.countCustomer = false
+                item.isInfoClick = false
+                item.isUpdateTrainingClick = false
                 clickListener?.invoke(item)
             }
 
             binding.clients.setOnClickListener {
-                item.countCustomer=true
+                item.countCustomer = true
+                item.isInfoClick = false
+                item.isUpdateTrainingClick = false
                 clickListener?.invoke(item)
             }
 

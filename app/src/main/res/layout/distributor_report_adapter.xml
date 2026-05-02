@@ -414,6 +414,50 @@
                         android:textSize="@dimen/_12sp" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/trainingStatusLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/normal"
+                        android:text="Training Status :"
+                        android:textColor="#1B2F56"
+                        android:textSize="@dimen/_12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/trainingStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:textColor="#1B2F56"
+                            android:text=""
+                            android:textSize="@dimen/_12sp" />
+
+                        <ImageView
+                            android:id="@+id/infoIcon"
+                            android:layout_width="@dimen/_16sp"
+                            android:layout_height="@dimen/_16sp"
+                            android:layout_marginStart="@dimen/_5sp"
+                            android:src="@drawable/info_training"
+                            android:visibility="gone"
+                             />
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
 
             <View
@@ -424,13 +468,14 @@
                 android:background="#4D1D3667" />
 
 
+
             <LinearLayout
                 android:id="@+id/viewCertificate"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sp"
+                android:visibility="gone"
                 android:background="@drawable/custom_trans_button"
                 android:gravity="center"
-                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
@@ -450,6 +495,20 @@
                     android:src="@drawable/arrow_right_orange" />
 
             </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/updateTraining"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sp"
+                android:background="@drawable/update_training_corner"
+                android:backgroundTint="#F86202"
+                android:fontFamily="@font/medium"
+                android:text="Update Training"
+                android:visibility="gone"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sp" />
+
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

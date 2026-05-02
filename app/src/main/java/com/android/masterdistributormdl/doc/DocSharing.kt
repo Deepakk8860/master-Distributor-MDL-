@@ -33,6 +33,9 @@ import com.android.masterdistributormdl.utils.addFragment
 import com.android.masterdistributormdl.utils.shooterFragment
 import com.android.masterdistributormdl.utils.showToastShort
 import com.google.gson.JsonObject
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.toRequestBody
 
 class DocSharing : Fragment() {
     private lateinit var binding: DocSharingBinding
@@ -103,7 +106,8 @@ class DocSharing : Fragment() {
                     val pdfUri = result.data?.data
                     if (pdfUri != null) {
                         val fileName = getFileNameFromUri(pdfUri)
-                        encodePdfToBase64(pdfUri, fileName)
+                        uploadPdfInFile(pdfUri, fileName)
+//                        encodePdfToBase64(pdfUri, fileName)
                     } else {
                         Toast.makeText(requireContext(), "PDF selection failed", Toast.LENGTH_SHORT).show()
                     }
@@ -196,6 +200,27 @@ class DocSharing : Fragment() {
                 showToastShort(it.message)
                 getDocList()
             }
+        }
+    }
+    //upload doc in file
+    private fun uploadPdfInFile(pdfUri: Uri, fileName: String) {
+        val inputStream = requireContext().contentResolver.openInputStream(pdfUri)
+        val bytes = inputStream?.readBytes()
+        inputStream?.close()
+
+        if (bytes != null) {
+            val requestFile = bytes.toRequestBody("application/pdf".toMediaTypeOrNull())
+            val documentFilePart = MultipartBody.Part.createFormData("document_file", fileName, requestFile)
+            val documentNamePart = MultipartBody.Part.createFormData("document_name", fileName)
+
+            model.uploadDocInFile(documentFilePart, documentNamePart) {
+                if (it.status == 0) {
+                    showToastShort(it.message)
+                    getDocList()
+                }
+            }
+        } else {
+            Toast.makeText(requireContext(), "Failed to read PDF file", Toast.LENGTH_SHORT).show()
         }
     }
 

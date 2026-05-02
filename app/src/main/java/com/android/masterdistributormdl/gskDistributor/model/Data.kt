@@ -210,6 +210,10 @@ data class ShopItem(
     val status: String,
     val isrequest: String,
     var countCustomer: Boolean,
+    var training_status: Boolean,
+    var training_remark: String,
+    var isInfoClick: Boolean = false,
+    var isUpdateTrainingClick: Boolean = false,
 ) : Serializable
 
 data class ReportOrderResult(

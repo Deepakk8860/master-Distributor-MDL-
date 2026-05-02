@@ -160,9 +160,13 @@ class GskDistributor : Fragment() {
 
         model.shopAdapter.setOnclickListener {
             it as ShopItem
-            if (it.countCustomer){
+            if (it.isInfoClick) {
+                showTrainingRemarkDialog(it.training_remark)
+            } else if (it.isUpdateTrainingClick) {
+                showUpdateTrainingConfirmDialog(it)
+            } else if (it.countCustomer) {
                 addFragment(requireActivity(), ReportDownloads(), bundleOf("reference" to "count"))
-            }else{
+            } else {
 //                addFragment(requireActivity(), ViewCertificateRetailer(), bundleOf("shopId" to it.id))
 
             }
@@ -311,6 +315,45 @@ class GskDistributor : Fragment() {
         datePickerDialog.datePicker.minDate = calenderStart.timeInMillis
         datePickerDialog.show()
     }
+
+    private fun showTrainingRemarkDialog(remark: String) {
+        val dialog = com.android.masterdistributormdl.gskDistributor.utils.getDialog(requireContext(), R.layout.training_remark_dialog)
+        val trainingRemark = dialog.findViewById<android.widget.TextView>(R.id.trainingRemark)
+        val close = dialog.findViewById<android.view.View>(R.id.close)
+        trainingRemark.text = remark
+        close.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    private fun showUpdateTrainingConfirmDialog(item: ShopItem) {
+        val dialog = com.android.masterdistributormdl.gskDistributor.utils.getDialog(requireContext(), R.layout.training_confirm_dialog)
+        val yes = dialog.findViewById<android.view.View>(R.id.yes)
+        val no = dialog.findViewById<android.view.View>(R.id.no)
+
+        yes.setOnClickListener {
+            dialog.dismiss()
+            model.updateTraining(item.shopid, "Y") {
+                showToastShort(it.message)
+                if (it.status == 0) {
+                    getDistributor()
+                }
+            }
+        }
+
+        no.setOnClickListener {
+            dialog.dismiss()
+            model.updateTraining(item.shopid, "N") {
+                showToastShort(it.message)
+                if (it.status == 0) {
+                    getDistributor()
+                }
+            }
+        }
+
+        dialog.show()
+    }
 }
 
 class DistributorModel(application: Application) : AndroidViewModel(application) {
@@ -412,6 +455,27 @@ class DistributorModel(application: Application) : AndroidViewModel(application)
 
             }.onFailure {
                 isLoaderVisible.value = false
+                retrofitError.postValue(errorRetrofit(it))
+            }
+        }
+    }
+
+    fun updateTraining(distid: String, status: String, result: (com.gsk.distributor.model.ApiResponse) -> Unit) {
+        isDialogVisible.value = true
+        val param = JsonObject()
+        param.addProperty("uid", sharedPreference.getString(user_id))
+        param.addProperty("distid", distid)
+        param.addProperty("status", status)
+        viewModelScope.launch {
+            kotlin.runCatching {
+                withContext(Dispatchers.IO) {
+                    getClient().updateTraining(param).body()!!
+                }
+            }.onSuccess {
+                isDialogVisible.value = false
+                result.invoke(it)
+            }.onFailure {
+                isDialogVisible.value = false
                 retrofitError.postValue(errorRetrofit(it))
             }
         }

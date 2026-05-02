@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/training_dialog_back"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_30sp"
+    android:paddingBottom="@dimen/_30sp"
+    android:paddingStart="@dimen/_20sp"
+    android:paddingEnd="@dimen/_20sp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="Please confirm that your training\nis completed?"
+        android:textColor="#1B2F56"
+        android:textSize="@dimen/_18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35sp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_10sp"
+        android:paddingEnd="@dimen/_10sp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no"
+            android:layout_width="0sp"
+            android:layout_height="@dimen/_40sp"
+            android:layout_marginEnd="@dimen/_10sp"
+            android:layout_weight="1"
+            android:background="@drawable/training_btn_no"
+            android:fontFamily="@font/bold"
+            android:text="No"
+            android:textAllCaps="false"
+            android:textColor="#F86202"
+            android:textSize="@dimen/_14sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/yes"
+            android:layout_width="0sp"
+            android:layout_height="@dimen/_40sp"
+            android:layout_marginStart="@dimen/_10sp"
+            android:layout_weight="1"
+            android:background="@drawable/training_btn_yes"
+            android:fontFamily="@font/bold"
+            android:text="Yes"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

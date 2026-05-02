@@ -26,6 +26,10 @@ import com.android.masterdistributormdl.utils.user_id
 import com.google.android.gms.common.api.Api
 import com.google.gson.JsonObject
 import com.gsk.distributor.model.UserResult
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -58,6 +62,27 @@ class DocModel(application: Application) : AndroidViewModel(application) {
             kotlin.runCatching {
                 withContext(Dispatchers.IO) {
                     getClient().uploadDoc(param).body()!!
+                }
+            }.onSuccess {
+                isLoaderVisible.value = false
+                result(it)
+            }.onFailure {
+                isLoaderVisible.value = false
+                retrofitError.postValue(errorRetrofit(it))
+
+            }
+        }
+    }
+
+    //upload doc in file format
+    fun uploadDocInFile(document_file: MultipartBody.Part, document_name: MultipartBody.Part, result: (ApiResponse) -> Unit) {
+        val uidStr = sharedPreference.getString(user_id) ?: ""
+        val uid = MultipartBody.Part.createFormData("uid", uidStr)
+        isLoaderVisible.value = true
+        viewModelScope.launch {
+            kotlin.runCatching {
+                withContext(Dispatchers.IO) {
+                    getClient().uploadDocInFile(document_file, document_name, uid).body()!!
                 }
             }.onSuccess {
                 isLoaderVisible.value = false

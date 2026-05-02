@@ -24,6 +24,10 @@ import com.google.gson.JsonObject
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.Multipart
+import retrofit2.http.Part
 
 
 interface RetrofitUrl {
@@ -106,6 +110,15 @@ interface RetrofitUrl {
         @Body param: JsonObject
     ): Response<ApiResponse>
 
+    //upload share in file format
+    @Multipart
+    @POST("$URL_PATH_START/masterdistributor/uploadShareDocumentFile")
+    suspend fun uploadDocInFile(
+        @Part document_file: MultipartBody.Part,
+        @Part document_name: MultipartBody.Part,
+        @Part uid: MultipartBody.Part
+    ): Response<ApiResponse>
+
     //doc list
     @POST("$URL_PATH_START/masterdistributor/getShareDocumentList")
     suspend fun docList(
@@ -117,6 +130,12 @@ interface RetrofitUrl {
     suspend fun getPlanList(
         @Body param: JsonObject
     ): Response<LeadStageResult>
+
+    //UPDATE training status
+    @POST("$URL_PATH_START/masterdistributor/updatetraining")
+    suspend fun updateTraining(
+        @Body param: JsonObject
+    ): Response<ApiResponse>
 
     //get prefered message
     @POST("$URL_PATH_START/masterdistributor/lead_share_messages")

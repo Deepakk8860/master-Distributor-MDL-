@@ -437,6 +437,11 @@ interface RetrofitUrl {
         @Body param: JsonObject
     ): Response<PushNotiResult>
 
+    @POST("$URL_PATH_START/masterdistributor/updatetraining")
+    suspend fun updateTraining(
+        @Body param: JsonObject
+    ): Response<ApiResponse>
+
     @POST("$URL_PATH_START/$URL_PATH/paymentShopUpdate")
     suspend fun paymentShopUpdate(
         @Body param: JsonObject
