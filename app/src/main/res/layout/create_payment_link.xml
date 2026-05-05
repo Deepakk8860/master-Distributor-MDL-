@@ -96,6 +96,88 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llCustomPlanFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:paddingHorizontal="@dimen/_12sp">
+
+                    <!-- Amount -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Amount"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        android:layout_marginTop="@dimen/_16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_9sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:fontFamily="@font/normal"
+                        android:hint="Enter Amount"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:padding="12dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txtAmountError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount is required and should be min 5000"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_4sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"/>
+
+                    <!-- Retailer Count -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Retailer Count"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        android:layout_marginTop="@dimen/_16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtRetailerCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_9sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:fontFamily="@font/normal"
+                        android:hint="Enter Retailer Count"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:padding="12dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txtRetailerCountError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Retailer count is required and should be min 1"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_4sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"

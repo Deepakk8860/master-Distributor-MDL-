@@ -72,10 +72,10 @@ import java.util.concurrent.TimeUnit
 import java.util.regex.Pattern
 
 //stage
-//const val BASE_URL = "https://diststage.gstnregistration.com/"
+const val BASE_URL = "https://diststage.gstnregistration.com/"
 
 //new live
-const val BASE_URL = "https://b2b.gstnregistration.com/"
+//const val BASE_URL = "https://b2b.gstnregistration.com/"
 //
 const val URL_PATH = "masterdistributor"
 const val URL_PATH_START = "appapi"

@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatTextView
@@ -128,6 +130,8 @@ class CreatePaymentLink : Fragment() {
         binding.btnSave.setOnClickListener {
             if (binding.txtOpportunity.text.isEmpty()) {
                 showToastShort("Please select plan")
+            } else if (planId == "6" && !validateCustomFields()) {
+                // Validation failed, errors already shown
             } else if (model.pincodeSelectedList.isEmpty()) {
                 showToastShort("Please select at least one pincode")
             } else {
@@ -141,6 +145,22 @@ class CreatePaymentLink : Fragment() {
 
 
         }
+
+        binding.edtAmount.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                validateAmount(s.toString())
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        binding.edtRetailerCount.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                validateRetailerCount(s.toString())
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
 
 
 
@@ -249,6 +269,10 @@ class CreatePaymentLink : Fragment() {
         param.addProperty("lead_id", leadId)
         param.addProperty("plan_id", planId)
         param.add("ter_pin", selectedListValue)
+        if (planId == "6") {
+            param.addProperty("custom_amount", binding.edtAmount.text.toString())
+            param.addProperty("custom_retailer", binding.edtRetailerCount.text.toString())
+        }
         model.createPaymentLink(param) {
             if (it.status == 0) {
                 SuccessAlert.show(requireContext(), it.message) {
@@ -297,6 +321,12 @@ class CreatePaymentLink : Fragment() {
                     getPlanByCity()
                 } else {
                     getUserProfile()
+                }
+
+                if (planId == "6") {
+                    binding.llCustomPlanFields.visibility = View.VISIBLE
+                } else {
+                    binding.llCustomPlanFields.visibility = View.GONE
                 }
 
 
@@ -363,6 +393,47 @@ class CreatePaymentLink : Fragment() {
         super.onHiddenChanged(hidden)
         if (!hidden) {
             setHeader()
+        }
+    }
+
+
+    private fun validateCustomFields(): Boolean {
+        val amount = binding.edtAmount.text.toString()
+        val retailerCount = binding.edtRetailerCount.text.toString()
+
+        val isAmountValid = validateAmount(amount)
+        val isRetailerValid = validateRetailerCount(retailerCount)
+
+        return isAmountValid && isRetailerValid
+    }
+
+    private fun validateAmount(amount: String): Boolean {
+        return if (amount.isEmpty()) {
+            binding.txtAmountError.visibility = View.VISIBLE
+            binding.txtAmountError.text = "Amount is required"
+            false
+        } else if ((amount.toLongOrNull() ?: 0) < 5000) {
+            binding.txtAmountError.visibility = View.VISIBLE
+            binding.txtAmountError.text = "Minimum amount should be 5000"
+            false
+        } else {
+            binding.txtAmountError.visibility = View.GONE
+            true
+        }
+    }
+
+    private fun validateRetailerCount(count: String): Boolean {
+        return if (count.isEmpty()) {
+            binding.txtRetailerCountError.visibility = View.VISIBLE
+            binding.txtRetailerCountError.text = "Retailer count is required"
+            false
+        } else if ((count.toLongOrNull() ?: 0) < 1) {
+            binding.txtRetailerCountError.visibility = View.VISIBLE
+            binding.txtRetailerCountError.text = "Minimum retailer count should be 1"
+            false
+        } else {
+            binding.txtRetailerCountError.visibility = View.GONE
+            true
         }
     }
 
