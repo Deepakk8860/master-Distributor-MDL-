@@ -381,6 +381,27 @@ class HomeModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    //create distributor
+    fun createDistributor(param: JsonObject, result: (ApiResponse) -> Unit) {
+        param.addProperty("uid", sharedPreference.getString(user_id))
+
+        isLoaderVisible.value = true
+        viewModelScope.launch {
+            kotlin.runCatching {
+                withContext(Dispatchers.IO) {
+                    getClient().createDistributor(param).body()!!
+                }
+            }.onSuccess {
+                isLoaderVisible.value = false
+                result(it)
+            }.onFailure {
+                isLoaderVisible.value = false
+                retrofitError.postValue(errorRetrofit(it))
+
+            }
+        }
+    }
+
     //add client lead
     fun addLead(param: JsonObject, result: (AddLeadResult) -> Unit) {
         param.addProperty("uid", sharedPreference.getString(user_id))

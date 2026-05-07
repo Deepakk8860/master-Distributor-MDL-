@@ -1,5 +1,7 @@
 package com.android.masterdistributormdl.model.leadstatus
 
+import java.io.Serializable
+
 data class Data(
     val activities: List<Activity>,
     val city: String,
@@ -19,4 +21,4 @@ data class Data(
     val pincode: String,
     val state: String,
     val whatsapp_num: String
-)
+) : Serializable

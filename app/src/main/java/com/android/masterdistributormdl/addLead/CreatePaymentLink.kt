@@ -47,6 +47,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.Calendar
+import java.io.Serializable
+import com.android.masterdistributormdl.model.leadstatus.Data
 
 
 class CreatePaymentLink : Fragment() {
@@ -58,6 +60,8 @@ class CreatePaymentLink : Fragment() {
     private var leadId = ""
     private var pincode_count = ""
     private var clientEmail = ""
+    private var planType = "fixed"
+    private var leadData: Data? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -101,6 +105,11 @@ class CreatePaymentLink : Fragment() {
     private fun initView() {
         leadId = requireArguments().getString("leadId") ?: ""
         clientEmail = requireArguments().getString("email") ?: ""
+        leadData = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requireArguments().getSerializable("leadData", Data::class.java)
+        } else {
+            requireArguments().getSerializable("leadData") as? Data
+        }
     }
 
     private fun getUserProfile() {
@@ -251,9 +260,10 @@ class CreatePaymentLink : Fragment() {
         }
         val countLimit = pincode_count.toIntOrNull() ?: 0
         val selectedPincodeCount = selectedListValue.count()
-        if (pincode_count == "City") {
+        if (pincode_count == "City" || pincode_count == "Custom") {
             submitForm(selectedListValue)
-        } else {
+        }
+        else {
             if (selectedPincodeCount <= countLimit) {
                 submitForm(selectedListValue)
             } else {
@@ -265,14 +275,18 @@ class CreatePaymentLink : Fragment() {
     }
 
     private fun submitForm(selectedListValue: JsonArray) {
+        createPaymentLink(selectedListValue)
+    }
+
+    private fun createPaymentLink(selectedListValue: JsonArray) {
         val param = JsonObject()
         param.addProperty("lead_id", leadId)
         param.addProperty("plan_id", planId)
         param.add("ter_pin", selectedListValue)
-        if (planId == "6") {
-            param.addProperty("custom_amount", binding.edtAmount.text.toString())
-            param.addProperty("custom_retailer", binding.edtRetailerCount.text.toString())
-        }
+        param.addProperty("agentid", "")
+        param.addProperty("plan_type", planType)
+        param.addProperty("custom_amount", binding.edtAmount.text.toString())
+        param.addProperty("custom_retailer", binding.edtRetailerCount.text.toString())
         model.createPaymentLink(param) {
             if (it.status == 0) {
                 SuccessAlert.show(requireContext(), it.message) {
@@ -283,6 +297,7 @@ class CreatePaymentLink : Fragment() {
             }
         }
     }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun openBottomSheetLead(
@@ -319,13 +334,19 @@ class CreatePaymentLink : Fragment() {
                 if (planId == "4") {
                     binding.txtPincodeMessage.text="Note: You can Select Minimum 1 and Maximum Any"
                     getPlanByCity()
-                } else {
+                }
+                else {
+                    if(planId == "6"){
+                        binding.txtPincodeMessage.text="Note: You can Select Minimum 1 and Maximum Any"
+                    }
                     getUserProfile()
                 }
 
                 if (planId == "6") {
+                    planType="custom"
                     binding.llCustomPlanFields.visibility = View.VISIBLE
                 } else {
+                    planType="fixed"
                     binding.llCustomPlanFields.visibility = View.GONE
                 }
 

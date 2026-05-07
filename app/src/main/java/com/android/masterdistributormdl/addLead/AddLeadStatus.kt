@@ -73,6 +73,7 @@ class AddLeadStatus : Fragment() {
     private var clientMobile = ""
     private var clientWhatsappMobile = ""
     private var clientEmail = ""
+    private var leadData: Data? = null
     private var isGmailOpened = false
     private var isCallOpened = false
     private var isMessageOpened = false
@@ -175,6 +176,7 @@ class AddLeadStatus : Fragment() {
 
 
     private fun setData(it: Data) {
+        leadData = it
         clientMobile = it.mobile
         clientEmail = it.email
         clientWhatsappMobile = it.whatsapp_num
@@ -203,7 +205,7 @@ class AddLeadStatus : Fragment() {
         }
 
         binding.ivPaymentLink.setOnClickListener {
-            addFragment(requireActivity(),CreatePaymentLink(), bundleOf("leadId" to leadId,"email" to clientEmail))
+            addFragment(requireActivity(),CreatePaymentLink(), bundleOf("leadId" to leadId,"email" to clientEmail, "leadData" to leadData))
         }
 
         binding.ivCall.setOnClickListener {

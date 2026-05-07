@@ -63,6 +63,12 @@ interface RetrofitUrl {
         @Body param: JsonObject
     ): Response<ApiResponse>
 
+    //create distributor
+    @POST("$URL_PATH_START/masterdistributor/create_distributor")
+    suspend fun createDistributor(
+        @Body param: JsonObject
+    ): Response<ApiResponse>
+
     //get lead status data
     @POST("$URL_PATH_START/masterdistributor/leaddetails")
     suspend fun getLeadStatusDetails(
