@@ -17,6 +17,7 @@
         android:background="@color/white">
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
@@ -309,20 +310,20 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+
+                <LinearLayout
                     android:id="@+id/root_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_16sp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sp"
+                    android:orientation="vertical">
 
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constAddActivity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        android:visibility="gone">
 
 
                         <!-- Timeline Line -->
@@ -370,19 +371,34 @@
                         android:id="@+id/timelineRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_25sp"
+                        android:layout_marginBottom="40dp"
                         android:adapter="@{model.timeLineAdapter}"
                         android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
                         android:orientation="vertical"
-                        android:scrollbars="vertical"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/constAddActivity"
                         tools:listitem="@layout/timeline_item" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!-- Load More Button -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnLoadMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_16sp"
+                        android:background="@drawable/edit_text_bg_mdl"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="10dp"
+                        android:text="Load More"
+                        android:textColor="#482687"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </LinearLayout>
 
 
             </LinearLayout>

@@ -78,6 +78,11 @@ class AddLeadStatus : Fragment() {
     private var isCallOpened = false
     private var isMessageOpened = false
     private var isWhatsAppOpened = false
+    private var allTimelineActivities = ArrayList<Any>()
+    private var currentTimelineList = ArrayList<Any>()
+    private val INITIAL_LOAD_SIZE = 10
+    private val LOAD_MORE_SIZE = 10
+    private var isLoadingMore = false
 
 
     override fun onCreateView(
@@ -99,10 +104,17 @@ class AddLeadStatus : Fragment() {
         handleRetrofitMessage()
         initView()
         initListener()
-        getLeadStage()
-        getLeadDetails()
+
+        // Smooth Entry: Delay API calls slightly to let fragment transition finish
+        view.post {
+            if (isAdded) {
+                getLeadStage()
+                getLeadDetails()
+                getPlanList()
+            }
+        }
+
         getActivityList()
-        getPlanList()
         getScheduleList()
     }
 
@@ -148,6 +160,12 @@ class AddLeadStatus : Fragment() {
             getLeadDetails()
         }
 
+        binding.btnLoadMore.setOnClickListener {
+            if (!isLoadingMore) {
+                loadMoreTimelineData()
+            }
+        }
+
     }
     private fun getLeadDetails() {
         val param = JsonObject().apply {
@@ -159,17 +177,74 @@ class AddLeadStatus : Fragment() {
                 // Heavy work in background thread
                 CoroutineScope(Dispatchers.Default).launch {
                     val data = response.data
+                    allTimelineActivities = ArrayList(data.activities)
 
-                    // Example: processing data (e.g., filtering, mapping, etc.)
-                    // val processed = processHeavyData(data)
+                    // Pre-process formatting in background to keep UI thread light
+                    val capitalizedName = data.display_name.capitalizeWords()
 
                     // Back to Main thread for UI update
                     withContext(Dispatchers.Main) {
-                        setData(data)
-                        model.timeLineAdapter.updateAdapter(data.activities as ArrayList<Any>)
+                        if (isAdded) {
+                            binding.txtDisplayName.text = capitalizedName
+                            setData(data)
+                            loadInitialTimelineData()
+                        }
                     }
                 }
             }
+        }
+    }
+
+    private fun loadInitialTimelineData() {
+        CoroutineScope(Dispatchers.Default).launch {
+            val initialList = ArrayList<Any>()
+            val initialSize = minOf(allTimelineActivities.size, INITIAL_LOAD_SIZE)
+            for (i in 0 until initialSize) {
+                initialList.add(allTimelineActivities[i])
+            }
+            withContext(Dispatchers.Main) {
+                currentTimelineList.clear()
+                currentTimelineList.addAll(initialList)
+                model.timeLineAdapter.updateAdapter(ArrayList(currentTimelineList))
+                updateLoadMoreButtonVisibility()
+            }
+        }
+    }
+
+    private fun loadMoreTimelineData() {
+        if (currentTimelineList.size >= allTimelineActivities.size) {
+            binding.btnLoadMore.visibility = View.GONE
+            return
+        }
+
+        isLoadingMore = true
+        binding.btnLoadMore.isEnabled = false
+        binding.btnLoadMore.text = "Loading..."
+
+        CoroutineScope(Dispatchers.Default).launch {
+            val currentSize = currentTimelineList.size
+            val remaining = allTimelineActivities.size - currentSize
+            val nextSize = minOf(remaining, LOAD_MORE_SIZE)
+            val newBatch = ArrayList<Any>()
+            for (i in 0 until nextSize) {
+                newBatch.add(allTimelineActivities[currentSize + i])
+            }
+            withContext(Dispatchers.Main) {
+                currentTimelineList.addAll(newBatch)
+                model.timeLineAdapter.updateAdapter(ArrayList(currentTimelineList))
+                isLoadingMore = false
+                binding.btnLoadMore.isEnabled = true
+                binding.btnLoadMore.text = "Load More"
+                updateLoadMoreButtonVisibility()
+            }
+        }
+    }
+
+    private fun updateLoadMoreButtonVisibility() {
+        if (currentTimelineList.size < allTimelineActivities.size) {
+            binding.btnLoadMore.visibility = View.VISIBLE
+        } else {
+            binding.btnLoadMore.visibility = View.GONE
         }
     }
 
@@ -181,7 +256,7 @@ class AddLeadStatus : Fragment() {
         clientEmail = it.email
         clientWhatsappMobile = it.whatsapp_num
         displayName = it.display_name
-        binding.txtDisplayName.text = it.display_name.capitalizeWords()
+        // Display name is now set in getLeadDetails pre-processed
         binding.txtMobile.text = it.mobile
         if (it.followup_date.isNotEmpty()) {
             binding.txtFollowsUpDate.text = it.followup_date

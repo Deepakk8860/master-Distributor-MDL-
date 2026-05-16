@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.masterdistributormdl.databinding.BottomAdapterBinding
 import com.android.masterdistributormdl.databinding.ItemPincodeBinding
@@ -23,7 +25,6 @@ import com.android.masterdistributormdl.gskDistributor.model.Territory
 import com.android.masterdistributormdl.main.MainModel
 import com.android.masterdistributormdl.model.BottomMenu
 import com.android.masterdistributormdl.model.LeadStageData
-import com.android.masterdistributormdl.model.lead.Data
 import com.android.masterdistributormdl.model.leadstatus.Activity
 import com.android.masterdistributormdl.model.leadstatus.LeadStatusDetailsResult
 import com.android.masterdistributormdl.utils.SharedPreference
@@ -37,7 +38,7 @@ import java.util.Random
 
 
 class HomeAdapter(val model: ViewModel?, var viewType: Int) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    ListAdapter<Any, RecyclerView.ViewHolder>(DiffCallback()) {
     var arrayList = ArrayList<Any>()
     var selected = -1
     val sharedPreference = SharedPreference()
@@ -45,6 +46,24 @@ class HomeAdapter(val model: ViewModel?, var viewType: Int) :
     private var clickListener: ((Any) -> Unit?)? = null
 
     private var clickListener2: ((Territory) -> Unit)? = null
+
+    class DiffCallback : DiffUtil.ItemCallback<Any>() {
+        override fun areItemsTheSame(oldItem: Any, newItem: Any): Boolean {
+            if (oldItem.javaClass != newItem.javaClass) return false
+            return when (oldItem) {
+                is Activity -> oldItem.activity_id == (newItem as Activity).activity_id
+                is com.android.masterdistributormdl.model.lead.Data -> oldItem.lead_id == (newItem as com.android.masterdistributormdl.model.lead.Data).lead_id
+                is com.android.masterdistributormdl.model.leadstatus.Data -> oldItem.lead_id == (newItem as com.android.masterdistributormdl.model.leadstatus.Data).lead_id
+                is BottomMenu -> oldItem.id == (newItem as BottomMenu).id
+                else -> oldItem == newItem
+            }
+        }
+
+        @SuppressLint("DiffUtilEquals")
+        override fun areContentsTheSame(oldItem: Any, newItem: Any): Boolean {
+            return oldItem == newItem
+        }
+    }
 
     fun setOnClickListener(listener: (Territory) -> Unit) {
         clickListener2 = listener
@@ -60,16 +79,16 @@ class HomeAdapter(val model: ViewModel?, var viewType: Int) :
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateAdapter() {
-        notifyDataSetChanged()
+        submitList(ArrayList(currentList))
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateAdapter(arrayList: ArrayList<Any>) {
         this.arrayList = arrayList
-        notifyDataSetChanged()
+        submitList(arrayList)
     }
 
-    override fun getItemCount() = arrayList.size
+    override fun getItemCount() = currentList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -100,7 +119,7 @@ class HomeAdapter(val model: ViewModel?, var viewType: Int) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindHolder(position: Int) {
-            val item = arrayList[position] as BottomMenu
+            val item = getItem(position) as BottomMenu
             val count = (model as MainModel).notiCount
             if (count > 0 && position == 1) {
                 binding.count.text = "$count"
@@ -130,18 +149,26 @@ class HomeAdapter(val model: ViewModel?, var viewType: Int) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindHolder(position: Int) {
-            val item = arrayList[position] as Activity
+            val item = getItem(position) as Activity
             binding.txtDateTime.text=item.last_activity_ago
             binding.title.text=item.remark
             binding.description.text=item.sub_remark
 //            loadImageWithCoil(binding.icon,item.last_activity_icon)
             binding.icon.loadSvg(binding.icon.context,item.last_activity_icon)
-            val lastPosition = arrayList.size - 1
+            val lastPosition = itemCount - 1
 
-            if (position==lastPosition){
-                binding.line.visibility=View.GONE
-            }else{
-                binding.line.visibility=View.VISIBLE
+            // Hide the top part of the line for the first item
+            if (position == 0) {
+                binding.lineTop.visibility = View.INVISIBLE
+            } else {
+                binding.lineTop.visibility = View.VISIBLE
+            }
+
+            // Hide the bottom part of the line for the last item
+            if (position == lastPosition) {
+                binding.lineBottom.visibility = View.INVISIBLE
+            } else {
+                binding.lineBottom.visibility = View.VISIBLE
             }
 
             binding.click.setOnClickListener {
@@ -156,7 +183,7 @@ class HomeAdapter(val model: ViewModel?, var viewType: Int) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindHolder(position: Int) {
-            val item = arrayList[position] as Data
+            val item = getItem(position) as com.android.masterdistributormdl.model.lead.Data
             binding.nameTxt.text = item.client_name.capitalizeWords()
             binding.txtDes.text=item.last_activity
             binding.txtStatus.text=item.lead_status
@@ -200,7 +227,7 @@ class HomeAdapter(val model: ViewModel?, var viewType: Int) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindHolder(position: Int) {
-            val item = arrayList[position] as Data
+            val item = getItem(position) as com.android.masterdistributormdl.model.lead.Data
             binding.ivDesIcon.visibility=View.GONE
             binding.nameTxt.text = item.client_name.capitalizeWords()
             binding.txtDes.text=item.last_activity
