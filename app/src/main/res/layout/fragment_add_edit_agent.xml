@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF9F3"
+        android:orientation="vertical"
+        android:theme="@style/MaterialTheme">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#132D5F"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sp"
+            android:paddingTop="@dimen/_15sp"
+            android:paddingBottom="@dimen/_15sp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/_35sp"
+                android:layout_height="@dimen/_35sp"
+                android:background="@drawable/custom_trans_button"
+                android:src="@drawable/arrow_left_white" />
+
+            <TextView
+                android:id="@+id/txtHeaderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sp"
+                android:fontFamily="@font/medium"
+                android:text="Add Agent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:backgroundColor="@color/white"
+            app:radiusTopLeft="@dimen/_35sp"
+            app:radiusTopRight="@dimen/_35sp"
+            android:padding="@dimen/_20sp"
+            >
+
+                <!-- Name Input -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nameInputLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:errorIconDrawable="@null">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="Name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
+
+                <!-- Email Input -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailInputLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:errorIconDrawable="@null">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="Email"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
+
+                <!-- Mobile Input -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/mobileInputLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:errorIconDrawable="@null">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="Mobile"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
+
+                <!-- Pincode Input -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/pincodeInputLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:errorIconDrawable="@null">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/pincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="Pincode"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
+
+                <!-- Address Input -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addressInputLay"
+                        style="@style/OutlinedBoxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:errorIconDrawable="@null">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:hint="Address"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+                            android:paddingStart="@dimen/_15sp"
+                            android:paddingEnd="@dimen/_15sp"
+                            android:singleLine="true"
+                            android:textColor="#1D3667"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="@dimen/_12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
+
+                <!-- Save/Edit Agent Button -->
+                <Button
+                    android:id="@+id/btnSave"
+                    style="@style/button"
+                    android:layout_marginTop="@dimen/_20sp"
+                    android:layout_marginBottom="@dimen/_15sp"
+                    android:text="Add Agent" />
+
+            </com.android.masterdistributormdl.gskDistributor.utils.CornorLinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>
