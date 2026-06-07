@@ -32,6 +32,7 @@ data class User(
     val profilephoto: String,
     val sameaddress: Boolean,
     val payout: Boolean,
+    val add_agent: Boolean,
     val usertype: String,
     val is_refer_enable: Boolean,
     val isApplyRetailer: Boolean

@@ -537,4 +537,19 @@ interface RetrofitUrl {
     suspend fun payoutcharge(
         @Body param: JsonObject
     ): Response<ApiResponse>
+
+    @POST("$URL_PATH_START/$URL_PATH/add_agent")
+    suspend fun addAgent(
+        @Body param: JsonObject
+    ): Response<ApiResponse>
+
+    @POST("$URL_PATH_START/$URL_PATH/edit_agent")
+    suspend fun editAgent(
+        @Body param: JsonObject
+    ): Response<ApiResponse>
+
+    @POST("$URL_PATH_START/$URL_PATH/agent_list")
+    suspend fun agentList(
+        @Body param: JsonObject
+    ): Response<AgentListResult>
 }

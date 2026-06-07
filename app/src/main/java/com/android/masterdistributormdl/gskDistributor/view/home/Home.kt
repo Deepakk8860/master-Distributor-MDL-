@@ -63,8 +63,7 @@ class Home : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.home_dist, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.home_dist, container, false)
         model = ViewModelProvider(this)[HomeModel::class.java]
         binding.model = model
         binding.lifecycleOwner = this
@@ -111,13 +110,13 @@ class Home : Fragment() {
         }
         binding.swipeRefreshLayout.setOnRefreshListener {
             dashCount()
-            if(model.getUser()!=null){
+            if (model.getUser() != null) {
 //                (requireActivity() as MainActivity).getBlockStatus()
             }
 
         }
         (requireActivity() as MainActivity).getAppVersion()
-        binding.withdraw.visibility=View.GONE
+        binding.withdraw.visibility = View.GONE
         binding.sliderImage.visibility = View.GONE
 //        binding.support.setOnClickListener { (requireActivity() as MainActivity).openSupport() }
         binding.support.setOnClickListener { (requireActivity() as MainActivity).openConsultant() }
@@ -126,7 +125,7 @@ class Home : Fragment() {
         binding.notification.setOnClickListener { addFragment(requireActivity(), Notification()) }
 //        model.offerimage()
 //        (requireActivity() as MainActivity).getAppVersion()
-        if(model.getUser()!=null){
+        if (model.getUser() != null) {
 //            (requireActivity() as MainActivity).getBlockStatus()
         }
         setSliderAdapter()
@@ -161,8 +160,14 @@ class Home : Fragment() {
             addFragment(requireActivity(), GskDistributor(), bundle)
         }
 
+        binding.agents.setOnClickListener {
+            val bundle = bundleOf("type" to "report", "title" to "Agent Report")
+            addFragment(requireActivity(), AgentListScreen(), bundle)
+        }
+
         binding.flSocial.setOnClickListener {
-            val url = "https://whatsapp.com/channel/0029VazAP4tLo4hjk40Fh50X" // Replace with your dynamic Telegram link
+            val url =
+                "https://whatsapp.com/channel/0029VazAP4tLo4hjk40Fh50X" // Replace with your dynamic Telegram link
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
 //            val url = "https://whatsapp.com/channel/0029VazAP4tLo4hjk40Fh50X"
@@ -202,14 +207,16 @@ class Home : Fragment() {
 
 
         binding.downloads.setOnClickListener {
-            addFragment(requireActivity(), ReportDownloads(),bundleOf("reference" to "home"))
+            addFragment(requireActivity(), ReportDownloads(), bundleOf("reference" to "home"))
         }
         binding.earnings.setOnClickListener {
             addFragment(requireActivity(), ReportEarning())
         }
 
         binding.frameLeads.setOnClickListener {
-            val intent = Intent(requireActivity(), com.android.masterdistributormdl.main.MainActivity::class.java)
+            val intent = Intent(
+                requireActivity(), com.android.masterdistributormdl.main.MainActivity::class.java
+            )
             startActivity(intent)
 //            addFragment(requireActivity(),com.android.masterdistributormdl.gskDistributor.view.home.ManageLead())
         }
@@ -223,7 +230,7 @@ class Home : Fragment() {
         (requireActivity() as MainActivity).handleMenuVisibility()
         val key = user.kyc_status ?: return
         if (!key.basic_status || !key.address_status) {
-            replaceFragment(requireActivity(),OnboardBasicDetails())
+            replaceFragment(requireActivity(), OnboardBasicDetails())
 //            val intent = Intent(requireActivity(), OnboardActivity::class.java)
 //            onboardLauncher.launch(intent)
         }
@@ -286,6 +293,11 @@ class Home : Fragment() {
     private fun setData() {
         val user = model.getUser()!!
         binding.userName.text = user.fullname
+        if (user.add_agent) {
+            binding.agents.visibility = View.VISIBLE
+        } else {
+            binding.agents.visibility = View.GONE
+        }
         (requireActivity() as MainActivity).setUserData(user)
     }
 
@@ -304,9 +316,11 @@ class Home : Fragment() {
         binding.downloadCount.text = dash.Downloads.toString()
         binding.distCount.text = dash.gsk_cnt.toString()
         binding.txtLeadsCount.text = dash.lead_count.toString()
+        binding.agentCount.text = dash.agent_count.toString()
         binding.shopCount.text = "${dash.Shops}"
         binding.orderCount.text = dash.Orders.toString()
-        binding.withdraw.visibility=View.VISIBLE
+        binding.agentCount.text = (dash.agent_cnt ?: dash.agent_count ?: 0).toString()
+        binding.withdraw.visibility = View.VISIBLE
         if (dash.isWithdraw) {
             binding.withdrawComi.text = "Withdraw Commission"
             binding.withdrawComi.tag = "withdraw"
@@ -315,7 +329,7 @@ class Home : Fragment() {
             binding.withdrawComi.tag = "kyc"
         }
         is_sales = dash.isAddSales
-        (requireActivity() as MainActivity).setAddSale( )
+        (requireActivity() as MainActivity).setAddSale()
     }
 
     fun getUserProfile() {
@@ -324,15 +338,16 @@ class Home : Fragment() {
                 model.save(it.data)
                 setData()
                 checkOnboarding()
-            }
-            else if (it.status==100){
+            } else if (it.status == 100) {
                 //handle maintenance
-            }
-            else {
+            } else {
                 (requireActivity() as MainActivity).unregisterPushNotifications()
                 model.sharedPreference.clearSharedPrefernce()
                 showToastShort(it.message)
-                val intent = Intent(requireActivity(), com.android.masterdistributormdl.main.SplashActivity::class.java)
+                val intent = Intent(
+                    requireActivity(),
+                    com.android.masterdistributormdl.main.SplashActivity::class.java
+                )
                 startActivity(intent)
                 requireActivity().finish()
             }

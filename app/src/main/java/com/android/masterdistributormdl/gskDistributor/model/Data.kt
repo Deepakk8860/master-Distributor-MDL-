@@ -2,6 +2,7 @@ package com.gsk.distributor.model
 
 import com.android.masterdistributormdl.gskDistributor.model.User
 import com.android.masterdistributormdl.model.territory.Territory
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class ErrorAlert(val status: Int, val message: String)
@@ -136,6 +137,8 @@ data class DashCount(
     val isWithdraw: Boolean,
     val isAddSales: Boolean,
     val Orders: Int,
+    val agent_cnt: Int? = 0,
+    val agent_count: Int? = 0
 ) : Serializable
 
 data class UserResult(
@@ -426,4 +429,21 @@ data class SettlementItem(
     val txn_type: String, val rrn: String,
     val txn_amount: Double, val txn_charge: Double, val debitamount: Double,
     val txn_status: String,
+) : Serializable
+
+data class AgentListResult(
+    val status: Int,
+    val message: String,
+    val data: List<AgentItem>
+) : Serializable
+
+data class AgentItem(
+    val id: String,
+    @SerializedName("fullname")
+    val name: String,
+    val email: String,
+    val mobile: String,
+    val pincode: String,
+    val address: String,
+    val create_dt: String? = null
 ) : Serializable

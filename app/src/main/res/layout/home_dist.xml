@@ -745,6 +745,92 @@
 
                             </LinearLayout>
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingStart="@dimen/_8sp"
+                                android:paddingTop="@dimen/_3sp"
+                                android:paddingEnd="@dimen/_12sp"
+                                android:paddingBottom="@dimen/_5sp">
+
+                                <FrameLayout
+                                    android:id="@+id/agents"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:layout_weight="1">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/shadow_box" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_25sp"
+                                        android:layout_marginTop="@dimen/_25sp"
+                                        android:gravity="center|start">
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:layout_width="@dimen/_30sp"
+                                            android:layout_height="@dimen/_30sp"
+                                            android:background="@drawable/orange_rect"
+                                            android:src="@drawable/my_profile"
+                                            app:contentPadding="@dimen/_5sp"
+                                            app:shapeAppearance="@style/CornerSize25Percent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/medium"
+                                            android:includeFontPadding="false"
+                                            android:paddingStart="@dimen/_7sp"
+                                            android:text="Agent"
+                                            android:textColor="#132D5F"
+                                            android:textSize="@dimen/_13sp" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:layout_marginStart="@dimen/_25sp"
+                                        android:layout_marginEnd="@dimen/_20sp"
+                                        android:layout_marginBottom="@dimen/_20sp"
+                                        android:gravity="center|start">
+
+                                        <TextView
+                                            android:id="@+id/agentCount"
+                                            android:layout_width="0sp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/black"
+                                            android:includeFontPadding="false"
+                                            android:text="0"
+                                            android:textColor="#F86202"
+                                            android:textSize="@dimen/_16sp" />
+
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:visibility="invisible">
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/shadow_box" />
+                                </FrameLayout>
+
+                            </LinearLayout>
+
 
                             <LinearLayout
                                 android:layout_width="match_parent"

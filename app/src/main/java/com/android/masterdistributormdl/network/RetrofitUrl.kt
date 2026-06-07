@@ -226,5 +226,18 @@ interface RetrofitUrl {
         @Body param: JsonObject
     ): Response<ApiResponse>
 
+    @POST("$URL_PATH_START/masterdistributor/add_agent")
+    suspend fun addAgent(
+        @Body param: JsonObject
+    ): Response<ApiResponse>
 
+    @POST("$URL_PATH_START/masterdistributor/edit_agent")
+    suspend fun editAgent(
+        @Body param: JsonObject
+    ): Response<ApiResponse>
+
+    @POST("$URL_PATH_START/masterdistributor/agent_list")
+    suspend fun agentList(
+        @Body param: JsonObject
+    ): Response<com.gsk.distributor.model.AgentListResult>
 }

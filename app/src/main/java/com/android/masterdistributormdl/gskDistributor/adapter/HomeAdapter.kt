@@ -17,6 +17,7 @@ import com.android.masterdistributormdl.databinding.ChatAdapterBinding
 import com.android.masterdistributormdl.databinding.DefaultQuotaAdapterBinding
 import com.android.masterdistributormdl.databinding.DistributorAdapterBinding
 import com.android.masterdistributormdl.databinding.DistributorReportAdapterBinding
+import com.android.masterdistributormdl.databinding.AgentItemAdapterBinding
 import com.android.masterdistributormdl.databinding.DownloadAdapterBinding
 import com.android.masterdistributormdl.databinding.DroupAdapterBinding
 import com.android.masterdistributormdl.databinding.NotiAdapterBinding
@@ -166,6 +167,9 @@ class HomeAdapter(val model: ViewModel, var viewType: Int) :
         else if (viewType == 29) {
             holder = ReportReferralHolder(ReportReferralAdapterBinding.inflate(inflater, parent, false))
         }
+        else if (viewType == 30) {
+            holder = AgentHolder(AgentItemAdapterBinding.inflate(inflater, parent, false))
+        }
 
 
         return holder!!
@@ -199,6 +203,7 @@ class HomeAdapter(val model: ViewModel, var viewType: Int) :
         else if (holder is ServiceItem5FinanceHolder) holder.bindHolder(position)
         else if (holder is DistributorHolder) holder.bindHolder(position)
         else if (holder is ReportReferralHolder) holder.bindHolder(position)
+        else if (holder is AgentHolder) holder.bindHolder(position)
     }
 
     inner class CertificateHolder(val binding: CertificateImageBinding) :
@@ -906,6 +911,23 @@ class HomeAdapter(val model: ViewModel, var viewType: Int) :
         }
     }
 
+    inner class AgentHolder(val binding: AgentItemAdapterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bindHolder(position: Int) {
+            val item = arrayList[position] as AgentItem
+            binding.name.text = item.name ?: ""
+            binding.email.text = item.email ?: ""
+            binding.mobile.text = item.mobile ?: ""
+            binding.pincode.text = item.pincode ?: ""
+            binding.address.text = item.address ?: ""
+
+            binding.btnEdit.setOnClickListener {
+                clickListener?.invoke(item)
+            }
+        }
+    }
+
     inner class BottomHolder(val binding: BottomAdapterDistBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -1023,6 +1045,16 @@ class HomeAdapter(val model: ViewModel, var viewType: Int) :
                 for (item in originalList) {
                     if (item is Data) {
                         if (item.referral_name.lowercase().contains(query, ignoreCase = true)) {
+                            filteredList.add(item)
+                        }
+                    }
+                }
+            }
+            else if (viewType == 30) {
+                for (item in originalList) {
+                    if (item is AgentItem) {
+                        val name = item.name ?: ""
+                        if (name.lowercase().contains(query, ignoreCase = true)) {
                             filteredList.add(item)
                         }
                     }
