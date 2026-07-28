@@ -75,8 +75,8 @@ import java.util.regex.Pattern
 //const val BASE_URL = "https://diststage.gstnregistration.com/"
 
 //new live
-const val BASE_URL = "https://b2b.gstnregistration.com/"
-//
+//const val BASE_URL = "https://b2b.gstnregistration.com/" //old url
+const val BASE_URL = "https://backend.gstnregistration.com/" //new url
 const val URL_PATH = "masterdistributor"
 const val URL_PATH_START = "appapi"
 

@@ -104,7 +104,8 @@ interface RetrofitUrl {
     ): Response<JsonObject>
 
     //aadhar otp
-    @POST("$URL_PATH_START/$URL_PATH/verify_aadhaar")
+//    @POST("$URL_PATH_START/$URL_PATH/verify_aadhaar")
+    @POST("$URL_PATH_START/verify_aadhaar")
     suspend fun aadharOTPVerify(
         @Body param: JsonObject
     ): Response<ApiResponseAadhar>
