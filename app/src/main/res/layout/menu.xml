@@ -411,7 +411,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sp"
                     android:gravity="center"
-                    android:visibility="gone"
                     android:orientation="horizontal"
                     android:paddingHorizontal="@dimen/_20sp"
                     android:paddingTop="@dimen/_10sp"

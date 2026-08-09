@@ -151,7 +151,8 @@ interface RetrofitUrl {
         @Body param: JsonObject
     ): Response<CertificateUrl>
 
-    @POST("$URL_PATH_START/$URL_PATH/generateMFCerticate")
+//    @POST("$URL_PATH_START/$URL_PATH/generateMFCerticate")
+    @POST("$URL_PATH_START/get_certificate")
     suspend fun generateMFCerticate(
         @Body param: JsonObject
     ): Response<CertificateUrl>
